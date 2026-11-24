@@ -24,10 +24,6 @@ class NumberedCanvas(canvas.Canvas):
 
     def draw_page_decorations(self, page_count):
         self.saveState()
-        # Dark Luxury Background
-        self.setFillColor(colors.HexColor('#06090e'))
-        self.rect(0, 0, 612, 792, fill=True, stroke=False)
-        
         # Gold Top Accent Bar
         self.setFillColor(colors.HexColor('#d4af37'))
         self.rect(40, 755, 532, 4, fill=True, stroke=False)
@@ -47,16 +43,23 @@ class NumberedCanvas(canvas.Canvas):
 
         self.setFont("Helvetica", 8)
         self.setFillColor(colors.HexColor('#64748b'))
-        self.drawString(40, 32, "CHRONOSPEC HOROLOGICAL INTELLIGENCE &bull; VERIFIED SECONDARY MARKET AUDIT")
+        self.drawString(40, 32, "CHRONOSPEC HOROLOGICAL INTELLIGENCE • VERIFIED SECONDARY MARKET AUDIT")
         self.drawRightString(572, 32, f"PAGE {self._pageNumber} OF {page_count} (OFFICIAL SAMPLE)")
         
-        # Diagonal Sample Watermark on each page
-        self.setFont("Helvetica-Bold", 54)
-        self.setFillColor(colors.HexColor('#1b2436'), alpha=0.35)
+        # Diagonal Sample Watermark (Very faint so all text and diagnostic tables are 100% visible!)
+        self.setFont("Helvetica-Bold", 46)
+        self.setFillColor(colors.HexColor('#38bdf8'), alpha=0.06)
         self.translate(306, 396)
         self.rotate(45)
-        self.drawCentredString(0, 0, "SAMPLE APPRAISAL")
+        self.drawCentredString(0, 0, "OFFICIAL SAMPLE DOSSIER")
         self.restoreState()
+
+def draw_background(canvas, doc):
+    canvas.saveState()
+    # Dark Luxury Background drawn BEFORE any story elements
+    canvas.setFillColor(colors.HexColor('#06090e'))
+    canvas.rect(0, 0, 612, 792, fill=True, stroke=False)
+    canvas.restoreState()
 
 def build_pdf(filename):
     doc = SimpleDocTemplate(
@@ -321,7 +324,7 @@ def build_pdf(filename):
     )
     story.append(Paragraph(checklist_text, body_style))
 
-    doc.build(story, canvasmaker=NumberedCanvas)
+    doc.build(story, onFirstPage=draw_background, onLaterPages=draw_background, canvasmaker=NumberedCanvas)
     print(f"Generated sample 5-page dossier: {filename}")
 
 if __name__ == '__main__':
