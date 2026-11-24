@@ -252,14 +252,20 @@
           </p>
         </div>
 
-        <!-- UNLOCK BUTTON -->
-        <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div class="text-xs text-zinc-400 font-mono">
-            <span class="text-emerald-400 font-bold">✓</span> Full 5-Page Dossier includes micro-engraving photo checks &amp; movement amplitude audit.
+        <!-- UNLOCK BUTTON & SAMPLE PDF BUTTON -->
+        <div class="pt-2 flex flex-col lg:flex-row items-center justify-between gap-4">
+          <div class="text-xs text-zinc-400 font-mono text-center lg:text-left">
+            <span class="text-emerald-400 font-bold">✓</span> Full 5-Page Dossier includes micro-engraving photo checks, timegrapher tolerances &amp; dealer escrow protocol.
           </div>
-          <button onclick="openCheckoutModal()" class="w-full sm:w-auto px-8 py-4 rounded-xl gold-gradient text-black font-black text-sm tracking-wide uppercase hover:brightness-110 shadow-xl shadow-amber-500/20 cursor-pointer flex items-center justify-center gap-2">
-            <span>⚡ Unlock Full 5-Page Dossier — $89</span>
-          </button>
+          <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+            <a href="sample_chronospec_dossier.pdf" target="_blank" class="w-full sm:w-auto px-6 py-4 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 border border-amber-500/40 text-amber-300 font-bold text-xs uppercase tracking-wider transition flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-amber-500/10">
+              <i data-lucide="file-text" class="w-4 h-4 text-amber-400"></i>
+              <span>📄 Preview Sample 5-Page Dossier (PDF)</span>
+            </a>
+            <button onclick="openCheckoutModal()" class="w-full sm:w-auto px-8 py-4 rounded-xl gold-gradient text-black font-black text-sm tracking-wide uppercase hover:brightness-110 shadow-xl shadow-amber-500/20 cursor-pointer flex items-center justify-center gap-2">
+              <span>⚡ Unlock Full 5-Page Dossier — $89</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
