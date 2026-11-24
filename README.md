@@ -10,11 +10,12 @@
 
 ---
 
-## ⚡ Quick Links & Live Tools
+## ⚡ Direct Access & Live Checkout
 
+- 💳 **[Direct Whop Checkout ($89 VIP 5-Page Dossier)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier)** *(Apple Pay, Google Pay, Global Cards, instant download)*
 - 🌐 **[Launch Interactive Inspection Engine](https://hseenglish.app/chronospec.html)** *(Analyze your Chrono24 / eBay listing in 15 seconds)*
-- 💳 **[Direct Whop Checkout ($89 VIP 5-Page Dossier)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier)** *(Apple Pay, Google Pay, Global Cards)*
 - 📄 **[Download Official Sample 5-Page Appraisal Dossier (PDF)](https://hseenglish.app/sample_chronospec_dossier.pdf)** *(View real report preview)*
+- 🪙 **Cryptocurrency Checkout (USDT TRC-20 / USDC ERC-20):** Instant on-chain verification available directly in the web app.
 
 ---
 
@@ -32,26 +33,26 @@ ChronoSpec calculates the **exact dollar deduction** you must demand from the se
 
 ## 📊 Rolex Master Catalog & Secondary Market Valuation Index
 
-| Model & Family | Factory Reference | Calibre Movement | Retail MSRP | Fair Cash Benchmark | Typical Dealer Markup |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| **Submariner Date 41** | `126610LN` | Calibre 3235 | $10,250 | **$13,800** | +$2,200 |
-| **Submariner 'Starbucks'** | `126610LV` | Calibre 3235 | $10,800 | **$15,600** | +$2,800 |
-| **Submariner 'Hulk'** | `116610LV` | Calibre 3135 | $9,050 | **$21,800** | +$4,200 |
-| **Submariner Aluminum** | `16610` | Calibre 3135 | $5,500 | **$9,400** | +$1,900 |
-| **Daytona 'Panda' White** | `116500LN` | Calibre 4130 | $14,550 | **$29,800** | +$5,400 |
-| **Daytona Ceramic (New)** | `126500LN` | Calibre 4131 | $15,100 | **$31,500** | +$5,800 |
-| **Daytona Steel Bezel** | `116520` | Calibre 4130 | $11,250 | **$19,800** | +$3,200 |
-| **GMT-Master II 'Pepsi'** | `126710BLRO` | Calibre 3285 | $10,900 | **$19,500** | +$3,800 |
-| **GMT-Master II 'Batman'** | `126710BLNR` | Calibre 3285 | $10,900 | **$15,800** | +$2,600 |
-| **GMT-Master II 'Sprite'** | `126720VTNR` | Calibre 3285 | $11,250 | **$16,900** | +$2,900 |
-| **Datejust 41 Wimbledon** | `126334` | Calibre 3235 | $10,500 | **$13,200** | +$2,100 |
-| **Day-Date 40 'President'** | `228238` | Calibre 3255 | $39,600 | **$41,500** | +$6,500 |
-| **Explorer I 36mm** | `124270` | Calibre 3230 | $7,450 | **$8,200** | +$1,400 |
-| **Explorer II 'Polar' 42** | `226570` | Calibre 3285 | $9,650 | **$11,800** | +$2,200 |
-| **Sea-Dweller 43mm** | `126600` | Calibre 3235 | $13,250 | **$13,900** | +$1,800 |
-| **Sky-Dweller Blue Dial** | `326934` | Calibre 9001 | $15,650 | **$21,500** | +$3,800 |
-| **Oyster Perpetual 41** | `124300` | Calibre 3230 | $6,400 | **$11,500** | +$2,500 |
-| **Milgauss Z-Blue** | `116400GV` | Calibre 3131 | $9,300 | **$12,800** | +$2,400 |
+| Model & Family | Factory Reference | Calibre Movement | Retail MSRP | Fair Cash Benchmark | Typical Dealer Markup | Instant Audit & Script |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Submariner Date 41** | `126610LN` | Calibre 3235 | $10,250 | **$13,800** | +$2,200 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Submariner 'Starbucks'** | `126610LV` | Calibre 3235 | $10,800 | **$15,600** | +$2,800 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Submariner 'Hulk'** | `116610LV` | Calibre 3135 | $9,050 | **$21,800** | +$4,200 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Submariner Aluminum** | `16610` | Calibre 3135 | $5,500 | **$9,400** | +$1,900 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Daytona 'Panda' White** | `116500LN` | Calibre 4130 | $14,550 | **$29,800** | +$5,400 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Daytona Ceramic (New)** | `126500LN` | Calibre 4131 | $15,100 | **$31,500** | +$5,800 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Daytona Steel Bezel** | `116520` | Calibre 4130 | $11,250 | **$19,800** | +$3,200 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **GMT-Master II 'Pepsi'** | `126710BLRO` | Calibre 3285 | $10,900 | **$19,500** | +$3,800 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **GMT-Master II 'Batman'** | `126710BLNR` | Calibre 3285 | $10,900 | **$15,800** | +$2,600 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **GMT-Master II 'Sprite'** | `126720VTNR` | Calibre 3285 | $11,250 | **$16,900** | +$2,900 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Datejust 41 Wimbledon** | `126334` | Calibre 3235 | $10,500 | **$13,200** | +$2,100 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Day-Date 40 'President'** | `228238` | Calibre 3255 | $39,600 | **$41,500** | +$6,500 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Explorer I 36mm** | `124270` | Calibre 3230 | $7,450 | **$8,200** | +$1,400 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Explorer II 'Polar' 42** | `226570` | Calibre 3285 | $9,650 | **$11,800** | +$2,200 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Sea-Dweller 43mm** | `126600` | Calibre 3235 | $13,250 | **$13,900** | +$1,800 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Sky-Dweller Blue Dial** | `326934` | Calibre 9001 | $15,650 | **$21,500** | +$3,800 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Oyster Perpetual 41** | `124300` | Calibre 3230 | $6,400 | **$11,500** | +$2,500 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Milgauss Z-Blue** | `116400GV` | Calibre 3131 | $9,300 | **$12,800** | +$2,400 | [Run Audit ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
 
 *Data aggregated weekly from Chrono24 verified dealer sales, WatchCharts price indices, and Geneva auction records.*
 
@@ -72,13 +73,41 @@ ChronoSpec calculates the **exact dollar deduction** you must demand from the se
 
 ---
 
+## 🏷️ Search Queries & High-Intent Index
+
+If you are looking for specific watch verification, click directly to generate your certified dossier:
+
+| High-Intent Search Term | Target Verification | Instant Whop Checkout |
+| :--- | :--- | :---: |
+| **Rolex Submariner Counterfeit Check** | Laser coronet micro-dot, font spacing, floating 'm' | [Unlock Dossier ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Clean Factory / VSF Superclone Detection** | Hand stack height, bezel click spring, balance bridge | [Unlock Dossier ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Rolex Calibre 3235 Amplitude Issue** | Low amplitude, premature lubricant breakdown audit | [Unlock Dossier ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Over-Polished Rolex Lugs Assessment** | 45-degree chamfer bevel sharpness, weight loss | [Unlock Dossier ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Chrono24 Dealer Negotiation Script** | Fair value delta, cash offer counter-script | [Unlock Dossier ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Franken-Watch Parts Swap Audit** | Non-original bezel inserts, swapped bracelet end-links | [Unlock Dossier ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Patek Philippe Nautilus 5711 PPI** | Dial grooving, date window font, Geneva seal check | [Unlock Dossier ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+| **Audemars Piguet Royal Oak 15500ST** | Grande Tapisserie square alignment, bezel screw sink | [Unlock Dossier ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier) |
+
+---
+
+## 🌐 Autonomous AI Portfolio by federal216
+
+Explore our other specialized forensic AI appraisal and safety engines:
+
+- 🏎️ **[LamboSpec AI — Supercar Pre-Purchase Inspection Engine](https://github.com/federal216/lamborghini-pre-purchase-inspection-lambospec)**  
+  *Detect CCB rotor oxidation, ISR clutch snap wear, and negotiate dealer prices for all 106 Lamborghini models.* [Whop Checkout ($79)](https://whop.com/cabinetscan-ai/lambospec-ai-vip-pre-purchase-dossier)
+- 💊 **[CabinetScan AI — Clinical Supplement & Drug Interaction Scanner](https://github.com/federal216/cabinetscan)**  
+  *Snap 1 photo of your medicine cabinet to detect molecular conflicts, liver/kidney load, and wasted spend.* [Whop Checkout ($99)](https://whop.com/checkout/plan_ikEY1bP1Pk7di)
+
+---
+
 ## 💳 Payment & Instant Delivery
 
 - **Whop Certified Checkout ($89.00 USD):** Supports Apple Pay, Google Pay, Visa, Mastercard, American Express.  
-  👉 **[Proceed to Whop Checkout](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier)**
+  👉 **[Proceed to Whop Checkout ($89)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier)**
 - **Cryptocurrency Checkout (USDT / USDC):**  
-  Direct TRON (TRC20) and Ethereum (ERC20) wallet transfers with automated on-chain verification available directly inside the app.
-- **Guarantee:** 100% Digital Delivery with a 14-day money-back guarantee.
+  Direct TRON (TRC20: `TUzD8hJcCsdjPZaS1man4vLAufiqzYpKWi`) and Ethereum (ERC20: `0x45824b71c98b4922723be312fa6fc8af6be0e090`) with automated on-chain verification.
+- **Guarantee:** 100% Instant Digital Delivery.
 
 ---
 
