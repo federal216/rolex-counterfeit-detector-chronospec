@@ -3,7 +3,7 @@
 [![Rating](https://img.shields.io/badge/Rating-4.92%20%2F%205.0%20(217%2B%20Verified%20Audits)-gold?style=for-the-badge&logo=rolex)](https://hseenglish.app/chronospec.html)
 [![Live Web Engine](https://img.shields.io/badge/Live%20App-hseenglish.app%2Fchronospec.html-emerald?style=for-the-badge&logo=safari)](https://hseenglish.app/chronospec.html)
 [![Whop Checkout](https://img.shields.io/badge/Instant%20Unlock-$89.00%20USD%20(Whop%20Verified)-blue?style=for-the-badge&logo=applepay)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier)
-[![Sample PDF](https://img.shields.io/badge/Sample%20Report-Download%205--Page%20Dossier-amber?style=for-the-badge&logo=adobeacrobatreader)](https://hseenglish.app/sample_chronospec_dossier.pdf)
+[![Sample PDF](https://img.shields.io/badge/Sample%20Report-Download%2010--Page%20Dossier-amber?style=for-the-badge&logo=adobeacrobatreader)](https://hseenglish.app/sample_chronospec_dossier.pdf)
 
 > **"Don't wire $15,000+ for a used Rolex until you run a ChronoSpec AI forensic audit."**  
 > Autonomous pre-purchase horology inspection and dealer negotiation engine for **Rolex, Patek Philippe, Audemars Piguet, and Omega**. Detects Franken-watch component swaps, over-polished lug chamfers, movement amplitude drops, and missing warranty card penalties before transferring funds.
@@ -12,9 +12,9 @@
 
 ## ⚡ Direct Access & Live Checkout
 
-- 💳 **[Direct Whop Checkout ($89 VIP 5-Page Dossier)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier)** *(Apple Pay, Google Pay, Global Cards, instant download)*
+- 💳 **[Direct Whop Checkout ($89 VIP 10-Page Dossier)](https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier)** *(Apple Pay, Google Pay, Global Cards, instant download)*
 - 🌐 **[Launch Interactive Inspection Engine](https://hseenglish.app/chronospec.html)** *(Analyze your Chrono24 / eBay listing in 15 seconds)*
-- 📄 **[Download Official Sample 5-Page Appraisal Dossier (PDF)](https://hseenglish.app/sample_chronospec_dossier.pdf)** *(View real report preview)*
+- 📄 **[Download Official Sample 10-Page Appraisal Dossier (PDF)](https://hseenglish.app/sample_chronospec_dossier.pdf)** *(View real report preview)*
 - 🪙 **Cryptocurrency Checkout (USDT TRC-20 / USDC ERC-20):** Instant on-chain verification available directly in the web app.
 
 ---
@@ -58,7 +58,7 @@ ChronoSpec calculates the **exact dollar deduction** you must demand from the se
 
 ---
 
-## 📑 What's Inside the 5-Page ChronoSpec Dossier ($89.00)
+## 📑 What's Inside the 10-Page ChronoSpec Dossier ($89.00)
 
 1. **Page 1: Official Horological Appraisal & Valuation Certificate**  
    MSRP comparison, certified secondary market benchmark, condition deduction summary, and certified horological gold seal.
