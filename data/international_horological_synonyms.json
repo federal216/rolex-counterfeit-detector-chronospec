@@ -1,0 +1,196 @@
+{
+  "version": "2026.1-GLOBAL-HOROLOGY",
+  "updated_at": "2026-11-24",
+  "source": "Geneva Watch Auction Archive, Chrono24 International Index & Rolex Collector Lexicon",
+  "rolex_official_country_codes": {
+    "LC_100": {
+      "country": "Germany",
+      "market_premium": "High collector trust; German-delivered papers retain +3% to +5% premium."
+    },
+    "LC_010": {
+      "country": "Switzerland",
+      "market_premium": "Home country origin; highly prized by European collectors."
+    },
+    "LC_061": {
+      "country": "France",
+      "market_premium": "Standard European delivery."
+    },
+    "LC_160": {
+      "country": "United Kingdom",
+      "market_premium": "Bucherer/Watches of Switzerland papers."
+    },
+    "LC_700_710_720": {
+      "country": "USA / North America",
+      "market_premium": "Named warranty cards; Mayors/Tourneau dealers."
+    },
+    "LC_888": {
+      "country": "Hong Kong",
+      "market_premium": "Huge volume market; verification of original dealer stamp essential."
+    },
+    "LC_028": {
+      "country": "Italy",
+      "market_premium": "Birthplace of vintage Rolex collecting; Italian papers highly liquid."
+    },
+    "LC_400": {
+      "country": "Turkey",
+      "market_premium": "Rhodium / Uğur Saat official AD warranty papers."
+    },
+    "LC_527": {
+      "country": "Middle East / UAE",
+      "market_premium": "Ahmed Seddiqi & Sons; sought-after Arabic calendar Day-Date variants."
+    }
+  },
+  "international_model_nicknames_and_regional_variants": {
+    "126610lv_submariner": {
+      "official_ref": "126610LV",
+      "global_english": [
+        "Starbucks",
+        "Cermit",
+        "New Kermit"
+      ],
+      "italian_french": [
+        "Ghiere Verde",
+        "Submariner Lunette Verte"
+      ],
+      "german": [
+        "Kermit Keramik",
+        "Grüne Submariner"
+      ],
+      "asian_markets": [
+        "Green Submariner Date 41",
+        "绿水鬼 (Green Water Ghost)"
+      ],
+      "key_verification": "MK1 (2020-2023) has darker hunter-green bezel; MK2 (late 2023+) has lighter lime-green hue matching original 16610LV."
+    },
+    "116610lv_submariner": {
+      "official_ref": "116610LV",
+      "global_english": [
+        "Hulk"
+      ],
+      "german_french": [
+        "Grüner Riese",
+        "Sub Hulk"
+      ],
+      "asian_markets": [
+        "绿水鬼 (Classic Green Water Ghost)"
+      ],
+      "key_verification": "Sunburst metallic green dial (aluminum PVD) paired with green Cerachrom bezel. Discontinued in 2020."
+    },
+    "126710blro_gmt": {
+      "official_ref": "126710BLRO",
+      "global_english": [
+        "Pepsi"
+      ],
+      "italian_french": [
+        "Pepsino",
+        "Bleu-Rouge",
+        "Pan Am Tribute"
+      ],
+      "german": [
+        "Pepsi Jubilé"
+      ],
+      "asian_markets": [
+        "百事圈 (Pepsi Bezel)"
+      ],
+      "key_verification": "MK1 bezel (2018-2019) has pastel violet/pink under UV light; MK2/MK3 bezels have deep cobalt blue and ruby red."
+    },
+    "126710blnr_gmt": {
+      "official_ref": "126710BLNR",
+      "global_english": [
+        "Batman (Oyster Bracelet)",
+        "Batgirl (Jubilee Bracelet)"
+      ],
+      "german_french": [
+        "Blauschwarz",
+        "Bleu-Noir"
+      ],
+      "asian_markets": [
+        "国米圈 (Inter Milan Bezel)"
+      ],
+      "key_verification": "Transition line between blue and black at 18:00 and 06:00 is seamless without color bleed."
+    },
+    "126720vtnr_gmt": {
+      "official_ref": "126720VTNR",
+      "global_english": [
+        "Sprite",
+        "Destro",
+        "Left-Handed GMT"
+      ],
+      "italian_spanish": [
+        "Destro",
+        "Zurdo",
+        "Corona a Sinistra"
+      ],
+      "asian_markets": [
+        "雪碧圈 (Sprite Bezel)"
+      ],
+      "key_verification": "Crown and date aperture located at 9 o'clock. Requires unique upside-down dial and date wheel alignment."
+    },
+    "126711chnr_gmt": {
+      "official_ref": "126711CHNR",
+      "global_english": [
+        "Root Beer"
+      ],
+      "japanese_asian": [
+        "Café au Lait (カフェオレ)",
+        "沙士圈 (Sarsaparilla Bezel)"
+      ],
+      "key_verification": "Two-tone 18k Everose gold and 904L steel with brown/black ceramic bezel."
+    },
+    "126613lb_submariner": {
+      "official_ref": "126613LB / 16613LB",
+      "global_english": [
+        "Bluesy"
+      ],
+      "regional_variants": [
+        "Submariner Or et Acier Bleu",
+        "Blaues Zifferblatt Bicolor"
+      ],
+      "key_verification": "Royal blue sunburst dial with gold-filled ceramic bezel lettering."
+    },
+    "116619lb_submariner": {
+      "official_ref": "116619LB",
+      "global_english": [
+        "Smurf"
+      ],
+      "regional_variants": [
+        "White Gold Lacquered Blue Sub",
+        "Schtroumpf"
+      ],
+      "key_verification": "Solid 18k white gold case with flat non-sunburst lacquered pastel blue dial. Heavy weight (~230 grams)."
+    },
+    "226570_explorer2": {
+      "official_ref": "226570 / 16570",
+      "global_english": [
+        "Polar (White Dial)",
+        "Steve McQueen / Freccione (Vintage Ref 1655)"
+      ],
+      "italian": [
+        "Freccione (Big Orange Arrow)"
+      ],
+      "key_verification": "Phantom hands effect created by black PVD base on white lacquered dial."
+    },
+    "116500ln_daytona": {
+      "official_ref": "116500LN",
+      "global_english": [
+        "Panda (White Dial)",
+        "Reverse Panda (Black Dial)"
+      ],
+      "vintage_variants": [
+        "Big Red (Ref 6263)",
+        "Paul Newman (Exotic Dial 6239/6241/6263)",
+        "Zenith Daytona (Ref 16520 - Calibre 4030)"
+      ],
+      "key_verification": "Asymmetrical subdial layout (3 and 9 o'clock subdials slightly elevated above horizontal centerline on in-house Calibre 4130/4131)."
+    },
+    "126334_datejust": {
+      "official_ref": "126334",
+      "global_english": [
+        "Wimbledon"
+      ],
+      "collector_notes": [
+        "Dark rhodium/slate dial with green-bordered black Roman numerals (Tribute to tennis grass courts at Wimbledon). 9 o'clock marker is a single luminescent baton for dial orientation."
+      ]
+    }
+  }
+}
