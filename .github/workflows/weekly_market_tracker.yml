@@ -1,0 +1,30 @@
+name: ChronoSpec AI Weekly Horology Market Tracker
+
+on:
+  schedule:
+    # Runs every Monday at 00:00 UTC (free GitHub Actions runner)
+    - cron: '0 0 * * 1'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  track-market:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Horology Market Crawler
+        run: |
+          python engine/market_crawler.py
+
+      - name: Commit and Push Updated Market Comps
+        run: |
+          git config --global user.name "ChronoSpec Market Bot"
+          git config --global user.email "bot@chronospec.ai"
+          git add data/live_market_comps.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(market): update weekly Rolex secondary comps [skip ci]" && git push)

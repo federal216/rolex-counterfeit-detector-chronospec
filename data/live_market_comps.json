@@ -1,0 +1,325 @@
+{
+  "crawler_version": "2.4.0",
+  "last_crawled_at": "2026-11-24T19:29:34.071487",
+  "market_week": "2026-W47",
+  "benchmark_sources": [
+    "Chrono24 European & US Verified Dealer Network",
+    "WatchCharts Secondary Market Index",
+    "Antiquorum & Phillips Geneva Auction Records",
+    "Rolex Forums & r/Watches Verified Private Sales"
+  ],
+  "macro_index": {
+    "rolex_composite_index": "248.4 pts",
+    "weekly_trend_pct": -0.5,
+    "liquidity_rating": "High / Immediate Clearance for Steel Sports",
+    "dealer_negotiation_headroom": "6.5% - 11.2% Off Listed Ask"
+  },
+  "live_comps": {
+    "rolex_sub_126610ln": {
+      "reference": "126610LN",
+      "model_name": "Rolex Submariner Date 41mm Black",
+      "family": "Submariner",
+      "retail_msrp": 10250,
+      "current_fair_comp_avg": 13951,
+      "current_dealer_avg_ask": 15471,
+      "comp_range_usd": [
+        12870,
+        15283
+      ],
+      "dealer_markup_spread_usd": 1520,
+      "weekly_momentum_pct": 1.1,
+      "active_market_listings": 53,
+      "avg_days_to_clear": 16,
+      "target_cash_counter_offer": 12974
+    },
+    "rolex_sub_126610lv": {
+      "reference": "126610LV",
+      "model_name": "Rolex Submariner Date 41mm 'Starbucks / Kermit'",
+      "family": "Submariner",
+      "retail_msrp": 10800,
+      "current_fair_comp_avg": 15832,
+      "current_dealer_avg_ask": 17779,
+      "comp_range_usd": [
+        14708,
+        17328
+      ],
+      "dealer_markup_spread_usd": 1947,
+      "weekly_momentum_pct": 1.49,
+      "active_market_listings": 34,
+      "avg_days_to_clear": 36,
+      "target_cash_counter_offer": 14723
+    },
+    "rolex_sub_116610lv": {
+      "reference": "116610LV",
+      "model_name": "Rolex Submariner Date 40mm 'Hulk' Green Dial & Bezel",
+      "family": "Submariner",
+      "retail_msrp": 9050,
+      "current_fair_comp_avg": 22026,
+      "current_dealer_avg_ask": 24514,
+      "comp_range_usd": [
+        19902,
+        24627
+      ],
+      "dealer_markup_spread_usd": 2488,
+      "weekly_momentum_pct": 1.04,
+      "active_market_listings": 42,
+      "avg_days_to_clear": 31,
+      "target_cash_counter_offer": 20484
+    },
+    "rolex_sub_16610": {
+      "reference": "16610",
+      "model_name": "Rolex Submariner Date 40mm Aluminum Bezel",
+      "family": "Submariner",
+      "retail_msrp": 5500,
+      "current_fair_comp_avg": 9498,
+      "current_dealer_avg_ask": 10466,
+      "comp_range_usd": [
+        8243,
+        10957
+      ],
+      "dealer_markup_spread_usd": 968,
+      "weekly_momentum_pct": 1.05,
+      "active_market_listings": 154,
+      "avg_days_to_clear": 30,
+      "target_cash_counter_offer": 8833
+    },
+    "rolex_daytona_126500ln": {
+      "reference": "126500LN",
+      "model_name": "Rolex Cosmograph Daytona 40mm Ceramic (New Gen)",
+      "family": "Daytona",
+      "retail_msrp": 15100,
+      "current_fair_comp_avg": 31928,
+      "current_dealer_avg_ask": 34801,
+      "comp_range_usd": [
+        29197,
+        35238
+      ],
+      "dealer_markup_spread_usd": 2873,
+      "weekly_momentum_pct": 1.36,
+      "active_market_listings": 162,
+      "avg_days_to_clear": 37,
+      "target_cash_counter_offer": 29693
+    },
+    "rolex_daytona_116500ln": {
+      "reference": "116500LN",
+      "model_name": "Rolex Cosmograph Daytona 'Panda' White Dial",
+      "family": "Daytona",
+      "retail_msrp": 14550,
+      "current_fair_comp_avg": 30416,
+      "current_dealer_avg_ask": 34065,
+      "comp_range_usd": [
+        27784,
+        33846
+      ],
+      "dealer_markup_spread_usd": 3649,
+      "weekly_momentum_pct": 2.07,
+      "active_market_listings": 77,
+      "avg_days_to_clear": 42,
+      "target_cash_counter_offer": 28286
+    },
+    "rolex_daytona_116520": {
+      "reference": "116520",
+      "model_name": "Rolex Cosmograph Daytona Stainless Steel Bezel",
+      "family": "Daytona",
+      "retail_msrp": 11250,
+      "current_fair_comp_avg": 19681,
+      "current_dealer_avg_ask": 22121,
+      "comp_range_usd": [
+        17946,
+        22432
+      ],
+      "dealer_markup_spread_usd": 2440,
+      "weekly_momentum_pct": -0.6,
+      "active_market_listings": 69,
+      "avg_days_to_clear": 30,
+      "target_cash_counter_offer": 18303
+    },
+    "rolex_gmt_126710blro": {
+      "reference": "126710BLRO",
+      "model_name": "Rolex GMT-Master II 'Pepsi' Jubilee/Oyster",
+      "family": "GMT-Master",
+      "retail_msrp": 10900,
+      "current_fair_comp_avg": 19646,
+      "current_dealer_avg_ask": 21669,
+      "comp_range_usd": [
+        18268,
+        22082
+      ],
+      "dealer_markup_spread_usd": 2023,
+      "weekly_momentum_pct": 0.75,
+      "active_market_listings": 138,
+      "avg_days_to_clear": 41,
+      "target_cash_counter_offer": 18270
+    },
+    "rolex_gmt_126710blnr": {
+      "reference": "126710BLNR",
+      "model_name": "Rolex GMT-Master II 'Batman / Batgirl'",
+      "family": "GMT-Master",
+      "retail_msrp": 10900,
+      "current_fair_comp_avg": 15790,
+      "current_dealer_avg_ask": 17890,
+      "comp_range_usd": [
+        14795,
+        17194
+      ],
+      "dealer_markup_spread_usd": 2100,
+      "weekly_momentum_pct": -0.06,
+      "active_market_listings": 49,
+      "avg_days_to_clear": 42,
+      "target_cash_counter_offer": 14684
+    },
+    "rolex_gmt_126720vtnr": {
+      "reference": "126720VTNR",
+      "model_name": "Rolex GMT-Master II 'Sprite' Left-Handed Destro",
+      "family": "GMT-Master",
+      "retail_msrp": 11250,
+      "current_fair_comp_avg": 17123,
+      "current_dealer_avg_ask": 18818,
+      "comp_range_usd": [
+        15602,
+        18622
+      ],
+      "dealer_markup_spread_usd": 1695,
+      "weekly_momentum_pct": 1.32,
+      "active_market_listings": 164,
+      "avg_days_to_clear": 25,
+      "target_cash_counter_offer": 15924
+    },
+    "rolex_datejust_126334": {
+      "reference": "126334",
+      "model_name": "Rolex Datejust 41 Fluted Bezel Jubilee (Wimbledon / Blue)",
+      "family": "Datejust",
+      "retail_msrp": 10500,
+      "current_fair_comp_avg": 13442,
+      "current_dealer_avg_ask": 14705,
+      "comp_range_usd": [
+        12312,
+        14734
+      ],
+      "dealer_markup_spread_usd": 1263,
+      "weekly_momentum_pct": 1.84,
+      "active_market_listings": 116,
+      "avg_days_to_clear": 45,
+      "target_cash_counter_offer": 12501
+    },
+    "rolex_daydate_228238": {
+      "reference": "228238",
+      "model_name": "Rolex Day-Date 40 'President' 18k Yellow Gold",
+      "family": "Day-Date",
+      "retail_msrp": 39600,
+      "current_fair_comp_avg": 41919,
+      "current_dealer_avg_ask": 46865,
+      "comp_range_usd": [
+        38191,
+        46232
+      ],
+      "dealer_markup_spread_usd": 4946,
+      "weekly_momentum_pct": 1.01,
+      "active_market_listings": 38,
+      "avg_days_to_clear": 38,
+      "target_cash_counter_offer": 38984
+    },
+    "rolex_explorer_124270": {
+      "reference": "124270",
+      "model_name": "Rolex Explorer I 36mm Classic Dial",
+      "family": "Explorer",
+      "retail_msrp": 7450,
+      "current_fair_comp_avg": 8259,
+      "current_dealer_avg_ask": 9382,
+      "comp_range_usd": [
+        7627,
+        8932
+      ],
+      "dealer_markup_spread_usd": 1123,
+      "weekly_momentum_pct": 0.73,
+      "active_market_listings": 161,
+      "avg_days_to_clear": 18,
+      "target_cash_counter_offer": 7680
+    },
+    "rolex_explorer2_226570": {
+      "reference": "226570",
+      "model_name": "Rolex Explorer II 42mm 'Polar' White Dial",
+      "family": "Explorer",
+      "retail_msrp": 9650,
+      "current_fair_comp_avg": 12034,
+      "current_dealer_avg_ask": 13237,
+      "comp_range_usd": [
+        11008,
+        13028
+      ],
+      "dealer_markup_spread_usd": 1203,
+      "weekly_momentum_pct": 1.99,
+      "active_market_listings": 133,
+      "avg_days_to_clear": 22,
+      "target_cash_counter_offer": 11191
+    },
+    "rolex_seadweller_126600": {
+      "reference": "126600",
+      "model_name": "Rolex Sea-Dweller 43mm 'Single Red'",
+      "family": "Sea-Dweller",
+      "retail_msrp": 13250,
+      "current_fair_comp_avg": 13893,
+      "current_dealer_avg_ask": 15782,
+      "comp_range_usd": [
+        12796,
+        14996
+      ],
+      "dealer_markup_spread_usd": 1889,
+      "weekly_momentum_pct": -0.05,
+      "active_market_listings": 120,
+      "avg_days_to_clear": 43,
+      "target_cash_counter_offer": 12920
+    },
+    "rolex_skydweller_326934": {
+      "reference": "326934",
+      "model_name": "Rolex Sky-Dweller Annual Calendar Blue Dial",
+      "family": "Sky-Dweller",
+      "retail_msrp": 15650,
+      "current_fair_comp_avg": 21697,
+      "current_dealer_avg_ask": 24061,
+      "comp_range_usd": [
+        19891,
+        24009
+      ],
+      "dealer_markup_spread_usd": 2364,
+      "weekly_momentum_pct": 0.92,
+      "active_market_listings": 117,
+      "avg_days_to_clear": 42,
+      "target_cash_counter_offer": 20178
+    },
+    "rolex_op41_124300": {
+      "reference": "124300",
+      "model_name": "Rolex Oyster Perpetual 41 'Celebration / Tiffany / Green'",
+      "family": "Oyster Perpetual",
+      "retail_msrp": 6400,
+      "current_fair_comp_avg": 11655,
+      "current_dealer_avg_ask": 12972,
+      "comp_range_usd": [
+        9564,
+        18121
+      ],
+      "dealer_markup_spread_usd": 1317,
+      "weekly_momentum_pct": 1.35,
+      "active_market_listings": 43,
+      "avg_days_to_clear": 17,
+      "target_cash_counter_offer": 10839
+    },
+    "rolex_milgauss_116400gv": {
+      "reference": "116400GV",
+      "model_name": "Rolex Milgauss Z-Blue Green Sapphire Glass",
+      "family": "Milgauss",
+      "retail_msrp": 9300,
+      "current_fair_comp_avg": 12547,
+      "current_dealer_avg_ask": 13726,
+      "comp_range_usd": [
+        11386,
+        14357
+      ],
+      "dealer_markup_spread_usd": 1179,
+      "weekly_momentum_pct": -1.97,
+      "active_market_listings": 69,
+      "avg_days_to_clear": 41,
+      "target_cash_counter_offer": 11668
+    }
+  }
+}
