@@ -181,38 +181,64 @@
         <!-- Model Selection -->
         <div>
           <label class="block text-xs font-mono font-bold text-zinc-300 uppercase mb-2">1. Select Reference / Rolex Model</label>
-          <select id="watchSelect" onchange="calculateWatchAudit()" class="w-full bg-zinc-950 border border-chrono-border rounded-xl px-4 py-3.5 text-sm text-white font-medium focus:border-amber-400 focus:outline-none">
-            <optgroup label="── Rolex Submariner ──">
-              <option value="rolex_sub_126610ln">Submariner Date 41mm (126610LN)</option>
-              <option value="rolex_sub_126610lv">Submariner Starbucks/Kermit (126610LV)</option>
-              <option value="rolex_sub_116610lv">Submariner Hulk Green (116610LV)</option>
-              <option value="rolex_sub_16610">Submariner Date Aluminum (16610)</option>
-            </optgroup>
-            <optgroup label="── Rolex Cosmograph Daytona ──">
-              <option value="rolex_daytona_126500ln">Daytona 40mm Ceramic (126500LN)</option>
-              <option value="rolex_daytona_116500ln">Daytona 'Panda' White (116500LN)</option>
-              <option value="rolex_daytona_116520">Daytona Steel Bezel (116520)</option>
-            </optgroup>
-            <optgroup label="── Rolex GMT-Master II ──">
-              <option value="rolex_gmt_126710blro">GMT-Master II 'Pepsi' (126710BLRO)</option>
-              <option value="rolex_gmt_126710blnr">GMT-Master II 'Batman/Batgirl' (126710BLNR)</option>
-              <option value="rolex_gmt_126720vtnr">GMT-Master II 'Sprite' Destro (126720VTNR)</option>
-            </optgroup>
-            <optgroup label="── Datejust &amp; Day-Date ──">
-              <option value="rolex_datejust_126334">Datejust 41 Wimbledon Fluted (126334)</option>
-              <option value="rolex_daydate_228238">Day-Date 40 'President' Gold (228238)</option>
-            </optgroup>
-            <optgroup label="── Explorer &amp; Sea-Dweller ──">
-              <option value="rolex_explorer_124270">Explorer I 36mm Classic (124270)</option>
-              <option value="rolex_explorer2_226570">Explorer II 42mm 'Polar' (226570)</option>
-              <option value="rolex_seadweller_126600">Sea-Dweller 43mm Single Red (126600)</option>
-            </optgroup>
-            <optgroup label="── Sky-Dweller, OP &amp; Milgauss ──">
-              <option value="rolex_skydweller_326934">Sky-Dweller Annual Calendar (326934)</option>
-              <option value="rolex_op41_124300">Oyster Perpetual 41 Celebration (124300)</option>
-              <option value="rolex_milgauss_116400gv">Milgauss Z-Blue Green Glass (116400GV)</option>
-            </optgroup>
-          </select>
+          <select id="watchSelect" onchange="calculateWatchAudit()" class="w-full bg-zinc-950/80 border border-zinc-700/80 rounded-xl px-4 py-3 text-white text-xs sm:text-sm font-medium focus:outline-none focus:border-amber-400 font-mono transition shadow-inner">
+                <optgroup label="── SUBMARINER ──">
+                  <option value="rolex_sub_126610ln">Rolex Submariner Date 41mm Black (126610LN)</option>
+                  <option value="rolex_sub_124060">Rolex Submariner 'No Date' 41mm (124060)</option>
+                  <option value="rolex_sub_126610lv">Rolex Submariner Date 'Starbucks / Cermit' (126610LV)</option>
+                  <option value="rolex_sub_116610lv">Rolex Submariner Date 'Hulk' Green Dial & Bezel (116610LV)</option>
+                  <option value="rolex_sub_16610">Rolex Submariner Date 40mm Aluminum Bezel (16610)</option>
+                  <option value="rolex_sub_vintage_5513">Rolex Vintage Submariner 'Meters First / Maxi' (Ref: 5513) (5513)</option>
+                </optgroup>
+                <optgroup label="── DAYTONA ──">
+                  <option value="rolex_daytona_116500ln">Rolex Cosmograph Daytona 'Panda' White Dial (116500LN)</option>
+                  <option value="rolex_daytona_126500ln">Rolex Cosmograph Daytona 40mm Ceramic (New Gen) (126500LN)</option>
+                  <option value="rolex_daytona_116520">Rolex Cosmograph Daytona Steel Bezel (Cal. 4130) (116520)</option>
+                  <option value="rolex_daytona_16520_zenith">Rolex Daytona 'Zenith El Primero Movement' (16520)</option>
+                  <option value="rolex_daytona_platinum_116506">Rolex Daytona Platinum Ice Blue Dial & Brown Cerachrom (116506)</option>
+                </optgroup>
+                <optgroup label="── GMT-MASTER II ──">
+                  <option value="rolex_gmt_126710blro">Rolex GMT-Master II 'Pepsi' Jubilee (126710BLRO)</option>
+                  <option value="rolex_gmt_126710blnr">Rolex GMT-Master II 'Batman / Batgirl' (126710BLNR)</option>
+                  <option value="rolex_gmt_126720vtnr">Rolex GMT-Master II 'Sprite / Destro' Left-Hand Crown (126720VTNR)</option>
+                </optgroup>
+                <optgroup label="── GMT-MASTER ──">
+                  <option value="rolex_gmt_vintage_1675">Rolex Vintage GMT-Master 'Pepsi' Long-E / Radial (1675)</option>
+                </optgroup>
+                <optgroup label="── EXPLORER ──">
+                  <option value="rolex_explorer_124270">Rolex Explorer I 36mm Classic (124270)</option>
+                  <option value="rolex_explorer_226570">Rolex Explorer II 42mm 'Polar' White Dial (226570)</option>
+                </optgroup>
+                <optgroup label="── SEA-DWELLER ──">
+                  <option value="rolex_seadweller_126600">Rolex Sea-Dweller 43mm 'Single Red' (126600)</option>
+                  <option value="rolex_deepsea_challenge_126067">Rolex Deepsea Challenge 50mm Full Titanium RLX (11,000m) (126067)</option>
+                </optgroup>
+                <optgroup label="── SKY-DWELLER ──">
+                  <option value="rolex_skydweller_326934">Rolex Sky-Dweller Annual Calendar Blue Dial (326934)</option>
+                </optgroup>
+                <optgroup label="── DATEJUST ──">
+                  <option value="rolex_datejust41_126334">Rolex Datejust 41 Fluted Bezel Jubilee (Blue/Wimbledon) (126334)</option>
+                </optgroup>
+                <optgroup label="── DAY-DATE ──">
+                  <option value="rolex_daydate40_228238">Rolex Day-Date 40 'President' 18k Yellow Gold Champagne (228238)</option>
+                </optgroup>
+                <optgroup label="── OYSTER PERPETUAL ──">
+                  <option value="rolex_op41_124300">Rolex Oyster Perpetual 41 'Celebration / Tiffany / Green' (124300)</option>
+                </optgroup>
+                <optgroup label="── MILGAUSS ──">
+                  <option value="rolex_milgauss_116400gv">Rolex Milgauss Z-Blue Green Sapphire Glass (116400GV)</option>
+                </optgroup>
+                <optgroup label="── YACHT-MASTER ──">
+                  <option value="rolex_yachtmaster_126622">Rolex Yacht-Master 40 Rolesium Slate / Blue Dial (126622)</option>
+                </optgroup>
+                <optgroup label="── PERPETUAL 1908 ──">
+                  <option value="rolex_1908_52508">Rolex Perpetual 1908 Yellow Gold (Exhibition Caseback) (52508)</option>
+                </optgroup>
+                <optgroup label="── HOLY TRINITY COMPS ──">
+                  <option value="patek_philippe_nautilus_5711">Patek Philippe Nautilus Blue Dial (Ref: 5711/1A-010) (5711/1A)</option>
+                  <option value="ap_royal_oak_15500st">Audemars Piguet Royal Oak Selfwinding 41mm Blue (15500ST.OO.1220ST.01)</option>
+                </optgroup>
+              </select>
         </div>
 
         <!-- Asking Price Input -->
@@ -549,7 +575,852 @@
 
   <!-- SCRIPT DATABASE & APP LOGIC -->
   <script>
-    const WATCH_DB = {"version": "2026.2", "updated_at": "2026-11-24", "total_models": 24, "source": "ChronoSpec Horological Intelligence & WatchCharts Global Aggregate", "models": {"rolex_sub_126610ln": {"name": "Rolex Submariner Date 41mm Black", "family": "Submariner", "reference": "126610LN", "era": "Modern (2020 - Present)", "calibre": "Rolex Calibre 3235 (70h reserve, Chronergy escapement)", "retail_msrp": 10250, "fair_market_avg": 13800, "market_range": [12800, 15200], "case_spec": "41.0mm x 12.3mm, 904L Oystersteel, 300m water resistance, Cerachrom bezel", "authenticity_vectors": ["Laser-Etched Coronet (LEC) at 6 o'clock composed of micro-dots only visible with 10x loupe under angled LED.", "Laser rehaut serial typography aligned strictly with dial minute hashes.", "Hand stack height: Hour hand bottom, Minute hand middle, Seconds hand top on rounded central pinion.", "Cerachrom bezel: Recessed platinum PVD numerals with sharp geometric wall transitions."], "chronic_faults": [{"issue": "Calibre 3235 Low Amplitude Drop", "cost": 1100, "detail": "Lubricant migration away from escape wheel pivots reducing balance amplitude below 200 degrees."}, {"issue": "Glidelock Sliding Tooth Wear", "cost": 650, "detail": "Accumulated grit eroding micro-adjustment tooth detents causing slippage under wrist tension."}, {"issue": "Platinum Bezel Numbering Degradation", "cost": 1600, "detail": "Ultrasonic bath chemicals leaching platinum PVD coating leaving dull gray numerals."}], "deductions": {"missing_guarantee_card": 2800, "missing_box_manuals": 650, "overpolished_chamfers": 1500, "unserviced_5_years": 950, "stretched_bracelet": 700}}, "rolex_sub_126610lv": {"name": "Rolex Submariner Date 41mm 'Starbucks / Kermit'", "family": "Submariner", "reference": "126610LV", "era": "Modern (2020 - Present)", "calibre": "Rolex Calibre 3235 (70h reserve)", "retail_msrp": 10800, "fair_market_avg": 15600, "market_range": [14600, 17200], "case_spec": "41.0mm x 12.3mm, Green Cerachrom bezel, 904L Oystersteel", "authenticity_vectors": ["MK1 vs MK2 Bezel Shade: 2020-2023 MK1 is darker forest green; late 2023+ MK2 is lime/olive hue.", "Dial text sharpness: 'SUBMARINER' text must feature razor-sharp pad-printing with no fuzzy edges."], "chronic_faults": [{"issue": "MK1 Bezel Swap Fraud", "cost": 2400, "detail": "Dealers swapping damaged green bezels with aftermarket replica inserts or MK2 colors."}, {"issue": "Calibre 3235 Amplitude Anomaly", "cost": 1100, "detail": "Timing machine indicates 180-210 amplitude in dial-up position after 2 years."}], "deductions": {"missing_guarantee_card": 3200, "missing_box_manuals": 700, "overpolished_chamfers": 1600, "unserviced_5_years": 950}}, "rolex_sub_116610lv": {"name": "Rolex Submariner Date 40mm 'Hulk' Green Dial & Bezel", "family": "Submariner", "reference": "116610LV", "era": "Discontinued Modern (2010 - 2020)", "calibre": "Rolex Calibre 3135 (Parachrom Bleu hairspring)", "retail_msrp": 9050, "fair_market_avg": 21800, "market_range": [19800, 24500], "case_spec": "40.0mm x 12.5mm 'Maxi Case', Sunburst green dial, Cerachrom bezel", "authenticity_vectors": ["Sunburst Green Gold Dial: Genuine dials contain real gold powder in lacquer; fakes lack radial sunray reflection under sunlight.", "Maxi Case Lug Profiles: Squared, wide lug silhouette with crisp, sharp factory brushed bevels."], "chronic_faults": [{"issue": "Dial Swap Franken Fraud", "cost": 6500, "detail": "Base black 116610LN fitted with aftermarket green dial/bezel sold at $10k premium."}, {"issue": "Rotor Axle Jewel Wear", "cost": 950, "detail": "Unlubricated 3135 rotor axle causing heavy rotor to scrape movement bridge."}], "deductions": {"missing_guarantee_card": 4200, "missing_box_manuals": 900, "overpolished_chamfers": 2200, "unserviced_5_years": 1100}}, "rolex_sub_16610": {"name": "Rolex Submariner Date 40mm Aluminum Bezel", "family": "Submariner", "reference": "16610", "era": "Neo-Vintage (1989 - 2010)", "calibre": "Rolex Calibre 3135 (31 Jewels, 28,800 vph)", "retail_msrp": 5500, "fair_market_avg": 9400, "market_range": [8200, 10900], "case_spec": "40.0mm x 12.8mm, Lug holes (pre-2003) or no-holes case (2003+), Aluminum bezel insert", "authenticity_vectors": ["Swiss-T<25 (Tritium until ~1998), 'SWISS' only (1998-1999 Luminova), 'SWISS MADE' (2000+ Super-LumiNova).", "Case Lug Thickness: 90% of pre-owned 16610s have been over-polished by jewellers, thinning lug horns."], "chronic_faults": [{"issue": "Hollow End-Link & 93150 Bracelet Sag", "cost": 1400, "detail": "Pins between folded hollow steel links wearing into oval shapes, causing severe 45-degree droop."}, {"issue": "Aftermarket Aluminum Bezel Insert", "cost": 650, "detail": "Cheap replacement bezel insert lacking correct flat-top four font."}], "deductions": {"missing_punched_papers": 2400, "missing_box": 500, "overpolished_lugs": 2000, "bracelet_stretch": 1100}}, "rolex_daytona_126500ln": {"name": "Rolex Cosmograph Daytona 40mm Ceramic (New Gen)", "family": "Daytona", "reference": "126500LN", "era": "Modern (2023 - Present)", "calibre": "Rolex Calibre 4131 (Chronergy Escapement, Skeletonized Rotor)", "retail_msrp": 15100, "fair_market_avg": 31500, "market_range": [29000, 35000], "case_spec": "40.0mm x 11.9mm, Metal outer ring surrounding Cerachrom bezel, 904L steel", "authenticity_vectors": ["Outer Metallic Bezel Ring: Refined design framing the ceramic insert with polished steel lip.", "Subdial ring slimming: Subdials are narrower and sharper than outgoing 116500LN."], "chronic_faults": [{"issue": "Screw-Down Pusher Thread Stripping", "cost": 1250, "detail": "Cross-threading pusher locking collars when operated under hurry."}], "deductions": {"missing_guarantee_card": 5500, "missing_box_manuals": 1000, "overpolished_case": 3500}}, "rolex_daytona_116500ln": {"name": "Rolex Cosmograph Daytona 'Panda' White Dial", "family": "Daytona", "reference": "116500LN", "era": "Discontinued Modern (2016 - 2023)", "calibre": "Rolex Calibre 4130 (Vertical Clutch, Column Wheel)", "retail_msrp": 14550, "fair_market_avg": 29800, "market_range": [27500, 33500], "case_spec": "40.0mm x 12.2mm, Monobloc Cerachrom ceramic bezel, 904L Oystersteel", "authenticity_vectors": ["Thickness verification: Exactly 12.2mm thickness. High-grade replicas exceed 12.5mm.", "Subdial concentric snailing: Precision guilloch\u00e9 rings inside the 3 subdials under magnification."], "chronic_faults": [{"issue": "Chronograph Minute Runner Jitter", "cost": 1850, "detail": "Vertical clutch friction spring fatigue causing minute subdial hand to skip ticks."}, {"issue": "Cerachrom Edge Chipping", "cost": 3200, "detail": "Micro-impact at 12 o'clock fracturing ceramic crystal perimeter."}], "deductions": {"missing_guarantee_card": 4500, "missing_box_manuals": 900, "overpolished_case": 3000, "unserviced_5_years": 1200}}, "rolex_daytona_116520": {"name": "Rolex Cosmograph Daytona Stainless Steel Bezel", "family": "Daytona", "reference": "116520", "era": "Neo-Vintage (2000 - 2016)", "calibre": "Rolex Calibre 4130 (First In-House Chronograph)", "retail_msrp": 11250, "fair_market_avg": 19800, "market_range": [18000, 22500], "case_spec": "40.0mm x 12.2mm, Engraved steel tachymetre bezel, White/Black dial (APH dial variation)", "authenticity_vectors": ["APH Dial Flaw Premium: 'COSMOGR   APH' gap in dial font commands 10-15% collector premium.", "Polished Steel Bezel: Radial brushed grain on steel bezel quickly destroyed by amateur buffing."], "chronic_faults": [{"issue": "Tachymetre Black Enamel Loss", "cost": 950, "detail": "Black enamel filling in engraved numbers fading or washing out from solvent contact."}], "deductions": {"missing_warranty_card_papers": 3500, "missing_box": 750, "overpolished_bezel": 2500}}, "rolex_gmt_126710blro": {"name": "Rolex GMT-Master II 'Pepsi' Jubilee/Oyster", "family": "GMT-Master", "reference": "126710BLRO", "era": "Modern (2018 - Present)", "calibre": "Rolex Calibre 3285 (70h reserve, Jumping Local Hour)", "retail_msrp": 10900, "fair_market_avg": 19500, "market_range": [18200, 22000], "case_spec": "40.0mm x 12.1mm, Red/Blue Bi-Color Cerachrom, Jubilee or Oyster bracelet", "authenticity_vectors": ["Ceramic Color Demarcation: Seamless split at 6 and 18 without bleeding or jagged pigment overlap.", "Hand Stack: Hour bottom, GMT Hand (Red) middle-lower, Minute hand middle-upper, Seconds top."], "chronic_faults": [{"issue": "MK1 Pastel vs MK2/MK3 Dark Bezel Disputes", "cost": 2200, "detail": "Dealers misrepresenting MK3 darker bezels as rare early 2018 pastel MK1 bezels."}, {"issue": "Jumping Hour Cam Mechanism Jam", "cost": 1200, "detail": "Internal cam spring binding if adjusted during date change turnover."}], "deductions": {"missing_guarantee_card": 3200, "missing_box": 650, "stretched_jubilee": 1600}}, "rolex_gmt_126710blnr": {"name": "Rolex GMT-Master II 'Batman / Batgirl'", "family": "GMT-Master", "reference": "126710BLNR", "era": "Modern (2019 - Present)", "calibre": "Rolex Calibre 3285 (Jubilee 126710BLNR or Oyster)", "retail_msrp": 10900, "fair_market_avg": 15800, "market_range": [14800, 17200], "case_spec": "40.0mm x 12.1mm, Blue/Black Cerachrom bezel, 904L steel", "authenticity_vectors": ["Blue GMT Hand Color Match: Powder blue paint on GMT hand must exactly match Cerachrom bezel blue tone."], "chronic_faults": [{"issue": "Calibre 3285 Power Reserve Drop", "cost": 1100, "detail": "Watch halts after 35-40 hours instead of rated 70 hours due to barrel arbor friction."}], "deductions": {"missing_warranty_card": 2600, "missing_box": 600, "overpolished_case": 1800}}, "rolex_gmt_126720vtnr": {"name": "Rolex GMT-Master II 'Sprite' Left-Handed Destro", "family": "GMT-Master", "reference": "126720VTNR", "era": "Modern (2022 - Present)", "calibre": "Rolex Calibre 3285 (Crown at 9 o'clock, Date at 9 o'clock)", "retail_msrp": 11250, "fair_market_avg": 16900, "market_range": [15500, 18500], "case_spec": "40.0mm x 12.1mm, Green/Black Cerachrom bezel, Destro configuration", "authenticity_vectors": ["Date Wheel Inversion: Date disc numbers must be oriented correctly for left-side cyclops reading."], "chronic_faults": [{"issue": "Destro Crown Impact Damage", "cost": 950, "detail": "Left wrist impacts catching the exposed 9 o'clock crown."}], "deductions": {"missing_warranty_card": 2900, "missing_box": 650, "overpolished_lugs": 1700}}, "rolex_datejust_126334": {"name": "Rolex Datejust 41 Fluted Bezel Jubilee (Wimbledon / Blue)", "family": "Datejust", "reference": "126334", "era": "Modern (2017 - Present)", "calibre": "Rolex Calibre 3235 (70h reserve)", "retail_msrp": 10500, "fair_market_avg": 13200, "market_range": [12200, 14600], "case_spec": "41.0mm x 11.7mm, 18k White Gold fluted bezel, 904L Oystersteel, Jubilee bracelet", "authenticity_vectors": ["18k White Gold Fluted Bezel: Flutes have razor-sharp pyramidal facets with intense mirror reflection.", "Wimbledon Dial '9' Marker: Only the 9 o'clock baton is lumed; Roman numerals are slate-grey with green lacquer outlines."], "chronic_faults": [{"issue": "White Gold Bezel Ding Damage", "cost": 2100, "detail": "Soft 18k gold facets easily flattened by door frame bumps, requiring complete bezel replacement."}, {"issue": "Calibre 3235 Lubrication Dry-Out", "cost": 950, "detail": "Requires complete teardown and re-lubrication under factory spec."}], "deductions": {"missing_guarantee_card": 2100, "missing_box": 500, "fluted_bezel_dents": 1800, "bracelet_stretch": 900}}, "rolex_daydate_228238": {"name": "Rolex Day-Date 40 'President' 18k Yellow Gold", "family": "Day-Date", "reference": "228238", "era": "Modern (2015 - Present)", "calibre": "Rolex Calibre 3255 (Day-Date instantaneously changing at midnight)", "retail_msrp": 39600, "fair_market_avg": 41500, "market_range": [38000, 46000], "case_spec": "40.0mm x 12.0mm, Solid 18k Yellow Gold, President bracelet with ceramic pin sleeves", "authenticity_vectors": ["Weight verification: Genuine 228238 weighs approximately 205-215 grams in solid gold. Gold-plated replicas weigh 145-160 grams.", "Hallmarks: Saint Bernard dog head (0.750 18k Swiss hallmark) and scales stamped under lugs.", "Ceramic link inserts: Inside the President bracelet links preventing gold-on-gold friction wear."], "chronic_faults": [{"issue": "Solid Gold Link Stretch & Pin Sag", "cost": 4500, "detail": "Older non-ceramic sleeve models developing severe bracelet droop over 5+ years."}, {"issue": "Day Disc Synchronization Lag", "cost": 1600, "detail": "Day window clicking 5-15 minutes past midnight due to worn jumper wheel teeth."}], "deductions": {"missing_guarantee_card": 6500, "missing_leather_wooden_box": 1200, "gold_overpolishing": 5000, "missing_gold_links": 1400}}, "rolex_explorer_124270": {"name": "Rolex Explorer I 36mm Classic Dial", "family": "Explorer", "reference": "124270", "era": "Modern (2021 - Present)", "calibre": "Rolex Calibre 3230 (70h reserve, Parachrom hairspring)", "retail_msrp": 7450, "fair_market_avg": 8200, "market_range": [7600, 8900], "case_spec": "36.0mm x 11.5mm, 19mm lug width taper, Gloss black dial, Chromalight 3-6-9 numerals", "authenticity_vectors": ["Chromalight 3-6-9 Lume: Solid white gold numerals filled with blue Chromalight phosphorescent compound."], "chronic_faults": [{"issue": "19mm Lug Width Bracelet Scratches", "cost": 450, "detail": "Aggressive 19mm taper makes strap swapping prone to gouging inner lug flanks."}], "deductions": {"missing_guarantee_card": 1600, "missing_box": 450, "overpolished_bezel": 900}}, "rolex_explorer2_226570": {"name": "Rolex Explorer II 42mm 'Polar' White Dial", "family": "Explorer", "reference": "226570", "era": "Modern (2021 - Present)", "calibre": "Rolex Calibre 3285 (Orange GMT 24-hour hand)", "retail_msrp": 9650, "fair_market_avg": 11800, "market_range": [10900, 12900], "case_spec": "42.0mm x 12.5mm, Satin-brushed steel 24-hour fixed bezel, Polar white lacquer dial", "authenticity_vectors": ["Phantom Hands on Black Dial vs Gloss Black Surrounds on Polar: Lume plots surrounded in deep gloss PVD black borders."], "chronic_faults": [{"issue": "Radial Brushed Bezel Scratches", "cost": 1100, "detail": "Fixed steel 24-hr bezel cannot be spot-polished without erasing circular brushed pattern."}], "deductions": {"missing_guarantee_card": 2200, "missing_box": 550, "bezel_scratches": 1200}}, "rolex_seadweller_126600": {"name": "Rolex Sea-Dweller 43mm 'Single Red'", "family": "Sea-Dweller", "reference": "126600", "era": "Modern (2017 - Present)", "calibre": "Rolex Calibre 3235 (Helium Escape Valve, Cyclops lens)", "retail_msrp": 13250, "fair_market_avg": 13900, "market_range": [12800, 15000], "case_spec": "43.0mm x 15.2mm, Helium escape valve, 1220m / 4000ft, Red 'SEA-DWELLER' text", "authenticity_vectors": ["Red Line Typography: Pure red single-line pad printing paying homage to vintage 1665 Great White.", "Helium Escape Valve: Flush titanium valve on 9 o'clock flank."], "chronic_faults": [{"issue": "Helium Valve O-Ring Drying", "cost": 850, "detail": "Failure of gas decompression gasket under pressure testing."}], "deductions": {"missing_guarantee_card": 2500, "missing_box": 600, "case_gouges": 1600}}, "rolex_skydweller_326934": {"name": "Rolex Sky-Dweller Annual Calendar Blue Dial", "family": "Sky-Dweller", "reference": "326934", "era": "Modern (2017 - Present)", "calibre": "Rolex Calibre 9001/9002 (Saros Annual Calendar, Ring Command Bezel)", "retail_msrp": 15650, "fair_market_avg": 21500, "market_range": [19800, 23900], "case_spec": "42.0mm x 14.0mm, 18k White Gold Ring Command bezel, 904L steel", "authenticity_vectors": ["Month Indicator Red Aperture: Red rectangular window above the 12 hour indices denoting current month (Saros mechanism).", "Ring Command Bezel: Bezel rotates through 3 distinct position detents to select calendar adjustment mode."], "chronic_faults": [{"issue": "Calibre 9001 Complex Ring Gear Disconnect", "cost": 2800, "detail": "Damage to planetary gear interface between bezel and movement if forced while crown is pulled."}], "deductions": {"missing_guarantee_card": 3800, "missing_box": 800, "ring_command_jam": 2500}}, "rolex_op41_124300": {"name": "Rolex Oyster Perpetual 41 'Celebration / Tiffany / Green'", "family": "Oyster Perpetual", "reference": "124300", "era": "Modern (2020 - Present)", "calibre": "Rolex Calibre 3230 (70h reserve)", "retail_msrp": 6400, "fair_market_avg": 11500, "market_range": [9500, 18000], "case_spec": "41.0mm x 11.5mm, Domed bezel, Oyster bracelet, Lacquered Stella-tribute dials", "authenticity_vectors": ["Dial Paint Authenticity: Celebration dial features 5 distinct circular bubble colors with black outlines under 20x magnification.", "Repaint Fraud: Repainted black/silver base dials disguised as rare Tiffany Turquoise dials."], "chronic_faults": [{"issue": "Aftermarket Dial Swap Scam", "cost": 5000, "detail": "Base $6k silver OP41 fitted with $100 fake turquoise dial sold for $18,000."}], "deductions": {"missing_guarantee_card": 2500, "missing_box": 450, "aftermarket_dial_penalty": 6000}}, "rolex_milgauss_116400gv": {"name": "Rolex Milgauss Z-Blue Green Sapphire Glass", "family": "Milgauss", "reference": "116400GV", "era": "Discontinued (2007 - 2023)", "calibre": "Rolex Calibre 3131 (Ferromagnetic Soft Iron Shield 1,000 Gauss)", "retail_msrp": 9300, "fair_market_avg": 12800, "market_range": [11500, 14500], "case_spec": "40.0mm x 13.1mm, Glace Verte (Green-tinted sapphire crystal), Orange lightning bolt seconds hand", "authenticity_vectors": ["Green Sapphire Bevel: Rolex never patented the green sapphire crystal because it was too difficult to replicate. Replicas use green AR coating or tinted gasket.", "Lightning Bolt Seconds Hand: Sinuous orange lacquer hand with precise razor-sharp edges."], "chronic_faults": [{"issue": "Green Sapphire Replacement Cost", "cost": 1800, "detail": "Any chip on the green sapphire crystal requires an expensive official service-only replacement."}], "deductions": {"missing_guarantee_card": 2400, "missing_box": 600, "chipped_green_crystal": 1800}}}};
+    const WATCH_DB = {
+  "models": {
+    "rolex_sub_126610ln": {
+      "name": "Rolex Submariner Date 41mm Black",
+      "family": "Submariner",
+      "reference": "126610LN",
+      "era": "Modern (2020 - Present)",
+      "calibre": "Rolex Calibre 3235 (70h reserve, Chronergy escapement)",
+      "retail_msrp": 10250,
+      "fair_market_avg": 13900,
+      "market_range": [
+        12800,
+        14900
+      ],
+      "case_spec": "41.0mm x 12.3mm, 904L Oystersteel, Cerachrom ceramic bezel",
+      "authenticity_vectors": [
+        "Laser Etched Coronet (LEC) at 6 o'clock",
+        "Rehaut laser engraving alignment",
+        "Solid end-link (SEL) tolerance"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Calibre 3235 Amplitude Degradation",
+          "cost": 1150,
+          "detail": "Lubricant drying on second wheel pinion"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 2800,
+        "missing_box": 500,
+        "over_polished_lugs": 1600
+      }
+    },
+    "rolex_sub_124060": {
+      "name": "Rolex Submariner 'No Date' 41mm",
+      "family": "Submariner",
+      "reference": "124060",
+      "era": "Modern (2020 - Present)",
+      "calibre": "Rolex Calibre 3230 (70h reserve, symmetrical dial)",
+      "retail_msrp": 9100,
+      "fair_market_avg": 12400,
+      "market_range": [
+        11500,
+        13200
+      ],
+      "case_spec": "41.0mm x 12.3mm, 904L Oystersteel, Clean symmetrical dial",
+      "authenticity_vectors": [
+        "Pure Symmetrical Dial without Date Window",
+        "Chromalight Blue 480nm Emission"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Glidelock Slide Dirt Infiltration",
+          "cost": 350,
+          "detail": "Micro-sand binding in clasp teeth"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 2500,
+        "missing_box": 450,
+        "lug_chamfer_wear": 1500
+      }
+    },
+    "rolex_sub_126610lv": {
+      "name": "Rolex Submariner Date 'Starbucks / Cermit'",
+      "family": "Submariner",
+      "reference": "126610LV",
+      "era": "Modern (2020 - Present)",
+      "calibre": "Rolex Calibre 3235 (Green Cerachrom Bezel)",
+      "retail_msrp": 10800,
+      "fair_market_avg": 15600,
+      "market_range": [
+        14200,
+        16900
+      ],
+      "case_spec": "41.0mm x 12.3mm, Green Cerachrom, Maxi dial",
+      "authenticity_vectors": [
+        "MK1 Olive Green vs MK2 Lime Green Bezel Sintering",
+        "LEC Dashed Laser Dots"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Aftermarket Green Insert Swap",
+          "cost": 3200,
+          "detail": "Standard 126610LN fitted with fake green bezel"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 3200,
+        "missing_box": 600,
+        "bezel_scuff": 1200
+      }
+    },
+    "rolex_sub_116610lv": {
+      "name": "Rolex Submariner Date 'Hulk' Green Dial & Bezel",
+      "family": "Submariner",
+      "reference": "116610LV",
+      "era": "Discontinued (2010 - 2020)",
+      "calibre": "Rolex Calibre 3135 (Parachrom blue spring)",
+      "retail_msrp": 9050,
+      "fair_market_avg": 21800,
+      "market_range": [
+        19500,
+        24500
+      ],
+      "case_spec": "40.0mm x 12.5mm, Maxi Supercase, Sunburst green dial",
+      "authenticity_vectors": [
+        "Sunburst Green Dial Radial PVD Finish",
+        "Supercase 45-degree lug bevel crispness"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Independent Over-Polishing",
+          "cost": 2500,
+          "detail": "Softening of blocky Supercase lugs"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 4500,
+        "missing_box": 700,
+        "polished_supercase": 2800
+      }
+    },
+    "rolex_sub_16610": {
+      "name": "Rolex Submariner Date 40mm Aluminum Bezel",
+      "family": "Submariner",
+      "reference": "16610",
+      "era": "Neo-Vintage (1988 - 2010)",
+      "calibre": "Rolex Calibre 3135 (Twinlock/Triplock)",
+      "retail_msrp": 5800,
+      "fair_market_avg": 9800,
+      "market_range": [
+        8500,
+        11200
+      ],
+      "case_spec": "40.0mm x 12.8mm, Anodized aluminum bezel insert, Pierced / Non-pierced lugs",
+      "authenticity_vectors": [
+        "Holes Case (pre-2003) vs No-Holes Case",
+        "Flat-4 vs Pointed-4 Kermit anniversary matrix"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Aluminum Bezel Insert Fading / Scratching",
+          "cost": 450,
+          "detail": "Soft anodized aluminum wear"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 2200,
+        "missing_box": 400,
+        "bracelet_stretch": 1200
+      }
+    },
+    "rolex_sub_vintage_5513": {
+      "name": "Rolex Vintage Submariner 'Meters First / Maxi' (Ref: 5513)",
+      "family": "Submariner",
+      "reference": "5513",
+      "era": "Vintage (1962 - 1989)",
+      "calibre": "Rolex Calibre 1520 / 1530 Non-COSC",
+      "retail_msrp": 450,
+      "fair_market_avg": 14500,
+      "market_range": [
+        11000,
+        28000
+      ],
+      "case_spec": "40.0mm, Domed Tropic 19 acrylic plexiglass, Serif dial",
+      "authenticity_vectors": [
+        "Tritium Patina Uniformity under UV",
+        "Period-Correct Twinlock 700 series crown"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Aftermarket Service Dial Swap",
+          "cost": 6500,
+          "detail": "Luminova replacement dial wiping out 50% collector value"
+        }
+      ],
+      "deductions": {
+        "service_dial_penalty": 7000,
+        "over_polished_chamfers": 3500,
+        "missing_papers": 3000
+      }
+    },
+    "rolex_daytona_116500ln": {
+      "name": "Rolex Cosmograph Daytona 'Panda' White Dial",
+      "family": "Daytona",
+      "reference": "116500LN",
+      "era": "Discontinued (2016 - 2023)",
+      "calibre": "Rolex Calibre 4130 (Vertical Clutch, 72h)",
+      "retail_msrp": 14550,
+      "fair_market_avg": 29800,
+      "market_range": [
+        27500,
+        33500
+      ],
+      "case_spec": "40.0mm x 12.2mm, Monobloc Cerachrom, Oysterlock clasp",
+      "authenticity_vectors": [
+        "Micro-grooved Subdial Concentric Snailing",
+        "Handstack Domed Pinion Finish"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Ceramic Bezel Rim Edge Chipping",
+          "cost": 1800,
+          "detail": "Lateral impact fracture near tachymetre scale"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 3500,
+        "missing_box": 600,
+        "polished_lugs": 1800,
+        "bezel_chip": 900
+      }
+    },
+    "rolex_daytona_126500ln": {
+      "name": "Rolex Cosmograph Daytona 40mm Ceramic (New Gen)",
+      "family": "Daytona",
+      "reference": "126500LN",
+      "era": "Modern (2023 - Present)",
+      "calibre": "Rolex Calibre 4131 (Chronergy Escapement, Skeletonized Rotor)",
+      "retail_msrp": 15100,
+      "fair_market_avg": 32800,
+      "market_range": [
+        30000,
+        36500
+      ],
+      "case_spec": "40.0mm x 11.9mm, Steel bezel border ring, Redesigned slimmer lugs",
+      "authenticity_vectors": [
+        "Outer Metal Bezel Protective Ring",
+        "Refined Arrowhead Lume Hour Indices"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Grey Market Flipper Premium Spread",
+          "cost": 4500,
+          "detail": "Artificial dealer markup over verified market comps"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 4000,
+        "missing_box": 700,
+        "clasp_desk_scratches": 800
+      }
+    },
+    "rolex_daytona_116520": {
+      "name": "Rolex Cosmograph Daytona Steel Bezel (Cal. 4130)",
+      "family": "Daytona",
+      "reference": "116520",
+      "era": "Discontinued (2000 - 2016)",
+      "calibre": "Rolex Calibre 4130 (First In-House Chronograph)",
+      "retail_msrp": 12000,
+      "fair_market_avg": 19500,
+      "market_range": [
+        17800,
+        23000
+      ],
+      "case_spec": "40.0mm x 12.2mm, Engraved steel tachymetre bezel, Black or White dial",
+      "authenticity_vectors": [
+        "APH Dial Font Spacing on White Dials",
+        "Engraved Steel Bezel Numerals Depth"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Radial Bezel Softening from Polishing",
+          "cost": 2200,
+          "detail": "Erasing stamped tachymetre numeral depth"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 3000,
+        "missing_box": 500,
+        "soft_steel_bezel": 2000
+      }
+    },
+    "rolex_daytona_16520_zenith": {
+      "name": "Rolex Daytona 'Zenith El Primero Movement'",
+      "family": "Daytona",
+      "reference": "16520",
+      "era": "Neo-Vintage (1988 - 2000)",
+      "calibre": "Rolex Calibre 4030 (Modified Zenith El Primero 36,000 to 28,800 vph)",
+      "retail_msrp": 6500,
+      "fair_market_avg": 27500,
+      "market_range": [
+        23000,
+        42000
+      ],
+      "case_spec": "40.0mm x 12.4mm, Inverted 6 dial variations, Patrizzi dial browning",
+      "authenticity_vectors": [
+        "Inverted 6 on Hour Subdial (MK1-MK3)",
+        "Natural Brown Patrizzi Varnish Oxidation"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Zenith Cal. 4030 Chronograph Reversing Wheel Wear",
+          "cost": 2400,
+          "detail": "Requires certified vintage specialist overhaul"
+        }
+      ],
+      "deductions": {
+        "service_dial_swap": 6000,
+        "over_polished_lugs": 3500,
+        "missing_papers": 4000
+      }
+    },
+    "rolex_daytona_platinum_116506": {
+      "name": "Rolex Daytona Platinum Ice Blue Dial & Brown Cerachrom",
+      "family": "Daytona",
+      "reference": "116506",
+      "era": "Discontinued (2013 - 2023)",
+      "calibre": "Rolex Calibre 4130 (950 Platinum, 283 grams)",
+      "retail_msrp": 75650,
+      "fair_market_avg": 115000,
+      "market_range": [
+        98000,
+        135000
+      ],
+      "case_spec": "40.0mm, Solid 950 Platinum (Pt950), Chestnut brown ceramic bezel",
+      "authenticity_vectors": [
+        "Total Mass: Exact 282-285g weight (Replicas weigh 160g)",
+        "Ice Blue Sunburst Radial Finishing"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Platinum Lug Scratches Deep Gouges",
+          "cost": 4500,
+          "detail": "Platinum requires laser metal addition, cannot be simply polished"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 12000,
+        "missing_box": 1500,
+        "case_gouges": 5000
+      }
+    },
+    "rolex_gmt_126710blro": {
+      "name": "Rolex GMT-Master II 'Pepsi' Jubilee",
+      "family": "GMT-Master II",
+      "reference": "126710BLRO",
+      "era": "Modern (2018 - Present)",
+      "calibre": "Rolex Calibre 3285 (70h reserve, independent 24h GMT hand)",
+      "retail_msrp": 10900,
+      "fair_market_avg": 19800,
+      "market_range": [
+        18200,
+        21800
+      ],
+      "case_spec": "40.0mm x 12.0mm, Blue/Red Cerachrom, Jubilee bracelet",
+      "authenticity_vectors": [
+        "MK1 vs MK2 vs MK3 Red/Blue Color Saturation under UV",
+        "Bidirectional 24-click spring assembly"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Ceramic Bezel Color Junction Bleed",
+          "cost": 1500,
+          "detail": "Clean transition line between 18 and 6 on bezel"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 3500,
+        "missing_box": 550,
+        "clasp_scuffs": 700
+      }
+    },
+    "rolex_gmt_126710blnr": {
+      "name": "Rolex GMT-Master II 'Batman / Batgirl'",
+      "family": "GMT-Master II",
+      "reference": "126710BLNR",
+      "era": "Modern (2019 - Present)",
+      "calibre": "Rolex Calibre 3285 (Blue/Black Cerachrom)",
+      "retail_msrp": 10900,
+      "fair_market_avg": 15800,
+      "market_range": [
+        14600,
+        17200
+      ],
+      "case_spec": "40.0mm x 12.0mm, Blue GMT hand, Oyster or Jubilee",
+      "authenticity_vectors": [
+        "Ceramic Blue/Black Color Boundary at 18 and 6",
+        "Blue GMT 24-hr Hand Post Stacking"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Jubilee 5-piece Link Stretch",
+          "cost": 850,
+          "detail": "Lateral pin play from uncleaned dust abrasives"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 2800,
+        "missing_box": 500,
+        "bezel_rim_nick": 800
+      }
+    },
+    "rolex_gmt_126720vtnr": {
+      "name": "Rolex GMT-Master II 'Sprite / Destro' Left-Hand Crown",
+      "family": "GMT-Master II",
+      "reference": "126720VTNR",
+      "era": "Modern (2022 - Present)",
+      "calibre": "Rolex Calibre 3285 (Crown at 9 o'clock, Green/Black bezel)",
+      "retail_msrp": 11250,
+      "fair_market_avg": 16900,
+      "market_range": [
+        15500,
+        18500
+      ],
+      "case_spec": "40.0mm, Left-Hand Drive (LHD), Date window at 9 o'clock",
+      "authenticity_vectors": [
+        "Inverted Date Wheel Mechanism",
+        "Crown Guard Milling on 9 o'clock flank"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Inverted Date Font Kerning Replica Error",
+          "cost": 2200,
+          "detail": "Replicas use standard date wheel upside down causing number misalignment"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 3200,
+        "missing_box": 550,
+        "case_chamfers": 1400
+      }
+    },
+    "rolex_gmt_vintage_1675": {
+      "name": "Rolex Vintage GMT-Master 'Pepsi' Long-E / Radial",
+      "family": "GMT-Master",
+      "reference": "1675",
+      "era": "Vintage (1959 - 1980)",
+      "calibre": "Rolex Calibre 1565 / 1575 Non-Quickset",
+      "retail_msrp": 250,
+      "fair_market_avg": 18500,
+      "market_range": [
+        14000,
+        32000
+      ],
+      "case_spec": "40.0mm, Pointed Crown Guards (PCG) or Round, Acrylic cyclops",
+      "authenticity_vectors": [
+        "Fuchsia Bezel Natural Chemical Aging",
+        "Matte Mark 1 'Long E' Typography"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Over-polished Pointed Crown Guards",
+          "cost": 5000,
+          "detail": "Shaving PCG lugs destroys irreplaceable collector value"
+        }
+      ],
+      "deductions": {
+        "service_bezel_insert": 4000,
+        "relumed_dial_hands": 5000,
+        "missing_papers": 3500
+      }
+    },
+    "rolex_explorer_124270": {
+      "name": "Rolex Explorer I 36mm Classic",
+      "family": "Explorer",
+      "reference": "124270",
+      "era": "Modern (2021 - Present)",
+      "calibre": "Rolex Calibre 3230 (70h reserve)",
+      "retail_msrp": 7250,
+      "fair_market_avg": 8400,
+      "market_range": [
+        7800,
+        9200
+      ],
+      "case_spec": "36.0mm x 11.5mm, Glossy black lacquer dial, 3-6-9 Chromalight numerals",
+      "authenticity_vectors": [
+        "3-6-9 Arabic Numerals Filled with Solid Chromalight",
+        "Tapered 19mm Oyster Bracelet"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Smooth Steel Bezel Swirls",
+          "cost": 650,
+          "detail": "Mirror-polished bezel shows scratches under harsh lighting"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 1800,
+        "missing_box": 400,
+        "bezel_buffing": 600
+      }
+    },
+    "rolex_explorer_226570": {
+      "name": "Rolex Explorer II 42mm 'Polar' White Dial",
+      "family": "Explorer",
+      "reference": "226570",
+      "era": "Modern (2021 - Present)",
+      "calibre": "Rolex Calibre 3285 (Orange GMT 24-hour hand)",
+      "retail_msrp": 9650,
+      "fair_market_avg": 11800,
+      "market_range": [
+        10900,
+        12900
+      ],
+      "case_spec": "42.0mm x 12.5mm, Satin-brushed steel 24-hour fixed bezel, Polar white lacquer dial",
+      "authenticity_vectors": [
+        "Gloss Black Surrounds on Polar Dial Lume plots",
+        "Matte Radial Brushed Steel Bezel"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Fixed Steel Bezel Deep Scratches",
+          "cost": 1100,
+          "detail": "Fixed steel 24-hr bezel cannot be spot-polished without erasing circular brushed pattern"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 2200,
+        "missing_box": 550,
+        "bezel_scratches": 1200
+      }
+    },
+    "rolex_seadweller_126600": {
+      "name": "Rolex Sea-Dweller 43mm 'Single Red'",
+      "family": "Sea-Dweller",
+      "reference": "126600",
+      "era": "Modern (2017 - Present)",
+      "calibre": "Rolex Calibre 3235 (Helium Escape Valve, Cyclops lens)",
+      "retail_msrp": 13250,
+      "fair_market_avg": 13900,
+      "market_range": [
+        12800,
+        15000
+      ],
+      "case_spec": "43.0mm x 15.2mm, Helium escape valve, 1220m / 4000ft, Red 'SEA-DWELLER' text",
+      "authenticity_vectors": [
+        "Pure Red Single-Line Pad Printing (Homage to 1665 Great White)",
+        "Flush Titanium Helium Valve on 9 flank"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Helium Valve O-Ring Drying",
+          "cost": 850,
+          "detail": "Failure of gas decompression gasket under pressure testing"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 2500,
+        "missing_box": 600,
+        "case_gouges": 1600
+      }
+    },
+    "rolex_deepsea_challenge_126067": {
+      "name": "Rolex Deepsea Challenge 50mm Full Titanium RLX (11,000m)",
+      "family": "Sea-Dweller",
+      "reference": "126067",
+      "era": "Modern (2022 - Present)",
+      "calibre": "Rolex Calibre 3230 (Ringlock System, Grade 5 RLX Titanium)",
+      "retail_msrp": 26000,
+      "fair_market_avg": 34500,
+      "market_range": [
+        31000,
+        39000
+      ],
+      "case_spec": "50.0mm x 23.0mm, RLX Titanium (251g), 11,000 meters / 36,090 feet water resistance",
+      "authenticity_vectors": [
+        "Grade 5 RLX Titanium Satin Grain",
+        "9.5mm Thick Domed Sapphire Crystal"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Titanium Thread Galling on Helium Valve",
+          "cost": 3200,
+          "detail": "Titanium requires proprietary specialized lubrication"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 5000,
+        "missing_box": 1200,
+        "titanium_chafing": 2500
+      }
+    },
+    "rolex_skydweller_326934": {
+      "name": "Rolex Sky-Dweller Annual Calendar Blue Dial",
+      "family": "Sky-Dweller",
+      "reference": "326934",
+      "era": "Modern (2017 - Present)",
+      "calibre": "Rolex Calibre 9001/9002 (Saros Annual Calendar, Ring Command Bezel)",
+      "retail_msrp": 15650,
+      "fair_market_avg": 21500,
+      "market_range": [
+        19800,
+        23900
+      ],
+      "case_spec": "42.0mm x 14.0mm, 18k White Gold Ring Command bezel, 904L steel",
+      "authenticity_vectors": [
+        "Month Indicator Red Aperture above 12 hour indices",
+        "Ring Command Bezel 3-position planetary detents"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Calibre 9001 Complex Ring Gear Disconnect",
+          "cost": 2800,
+          "detail": "Damage to planetary gear interface if forced while crown is pulled"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 3800,
+        "missing_box": 800,
+        "ring_command_jam": 2500
+      }
+    },
+    "rolex_datejust41_126334": {
+      "name": "Rolex Datejust 41 Fluted Bezel Jubilee (Blue/Wimbledon)",
+      "family": "Datejust",
+      "reference": "126334",
+      "era": "Modern (2016 - Present)",
+      "calibre": "Rolex Calibre 3235 (18k White Gold Fluted Bezel)",
+      "retail_msrp": 10500,
+      "fair_market_avg": 12800,
+      "market_range": [
+        11600,
+        14200
+      ],
+      "case_spec": "41.0mm x 11.7mm, White Rolesor, Jubilee bracelet",
+      "authenticity_vectors": [
+        "18k White Gold Fluted Facets Razor Edge",
+        "Cyclops 2.5x Magnification with Anti-Reflective coating"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "White Gold Fluted Ridge Dents",
+          "cost": 1800,
+          "detail": "Softer 18k gold fluted facets ding easily on door handles"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 2200,
+        "missing_box": 450,
+        "fluted_dents": 1200
+      }
+    },
+    "rolex_daydate40_228238": {
+      "name": "Rolex Day-Date 40 'President' 18k Yellow Gold Champagne",
+      "family": "Day-Date",
+      "reference": "228238",
+      "era": "Modern (2015 - Present)",
+      "calibre": "Rolex Calibre 3255 (Instantaneous Day and Date)",
+      "retail_msrp": 41500,
+      "fair_market_avg": 44800,
+      "market_range": [
+        41000,
+        48500
+      ],
+      "case_spec": "40.0mm, Solid 18k Yellow Gold, Semi-circular 3-piece President links with ceramic pins",
+      "authenticity_vectors": [
+        "Hallmarks: St. Bernard dog head & 750 scales stamped under lugs",
+        "Ceramic Link Sleeve Bushings"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Aftermarket Diamond Bezel Replacement",
+          "cost": 8500,
+          "detail": "Drilled factory bezel destroying collector value"
+        }
+      ],
+      "deductions": {
+        "aftermarket_diamonds_penalty": 10000,
+        "missing_guarantee_card": 5500,
+        "missing_box": 1000
+      }
+    },
+    "rolex_op41_124300": {
+      "name": "Rolex Oyster Perpetual 41 'Celebration / Tiffany / Green'",
+      "family": "Oyster Perpetual",
+      "reference": "124300",
+      "era": "Modern (2020 - Present)",
+      "calibre": "Rolex Calibre 3230 (70h reserve)",
+      "retail_msrp": 6400,
+      "fair_market_avg": 11500,
+      "market_range": [
+        9500,
+        18000
+      ],
+      "case_spec": "41.0mm x 11.5mm, Domed bezel, Oyster bracelet, Lacquered Stella-tribute dials",
+      "authenticity_vectors": [
+        "Celebration Dial 5 Distinct Circular Bubble Colors under 20x",
+        "Repaint Fraud Detection"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Aftermarket Dial Swap Scam",
+          "cost": 5000,
+          "detail": "Base $6k silver OP41 fitted with $100 fake turquoise dial sold for $18,000"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 2500,
+        "missing_box": 450,
+        "aftermarket_dial_penalty": 6000
+      }
+    },
+    "rolex_milgauss_116400gv": {
+      "name": "Rolex Milgauss Z-Blue Green Sapphire Glass",
+      "family": "Milgauss",
+      "reference": "116400GV",
+      "era": "Discontinued (2007 - 2023)",
+      "calibre": "Rolex Calibre 3131 (Ferromagnetic Soft Iron Shield 1,000 Gauss)",
+      "retail_msrp": 9300,
+      "fair_market_avg": 12800,
+      "market_range": [
+        11500,
+        14500
+      ],
+      "case_spec": "40.0mm x 13.1mm, Glace Verte (Green sapphire), Orange lightning bolt seconds hand",
+      "authenticity_vectors": [
+        "Green Sapphire Bevel: Homogeneous through-colored green synthetic corundum",
+        "Lightning Bolt Orange Lacquer"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Green Sapphire Replacement Cost",
+          "cost": 1800,
+          "detail": "Any chip on the green sapphire requires official RSC replacement"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 2400,
+        "missing_box": 600,
+        "chipped_green_crystal": 1800
+      }
+    },
+    "rolex_yachtmaster_126622": {
+      "name": "Rolex Yacht-Master 40 Rolesium Slate / Blue Dial",
+      "family": "Yacht-Master",
+      "reference": "126622",
+      "era": "Modern (2019 - Present)",
+      "calibre": "Rolex Calibre 3235 (950 Platinum Bidirectional Bezel)",
+      "retail_msrp": 12300,
+      "fair_market_avg": 14200,
+      "market_range": [
+        13100,
+        15500
+      ],
+      "case_spec": "40.0mm x 11.5mm, 950 Platinum sandblasted bezel with raised polished numerals",
+      "authenticity_vectors": [
+        "Sandblasted Platinum Bezel Texture",
+        "Cyan Blue Seconds Hand and Dial Lettering"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Platinum Bezel Sandblast Flattening",
+          "cost": 2100,
+          "detail": "Independent polishing erases the frosted sandblast background"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 2600,
+        "missing_box": 500,
+        "bezel_sandblast_damage": 1900
+      }
+    },
+    "rolex_1908_52508": {
+      "name": "Rolex Perpetual 1908 Yellow Gold (Exhibition Caseback)",
+      "family": "Perpetual 1908",
+      "reference": "52508",
+      "era": "Modern (2023 - Present)",
+      "calibre": "Rolex Calibre 7140 (Syloxi silicon hairspring, Sapphire caseback)",
+      "retail_msrp": 23050,
+      "fair_market_avg": 25800,
+      "market_range": [
+        24000,
+        28500
+      ],
+      "case_spec": "39.0mm x 9.5mm, 18k Yellow Gold, Part-domed part-fluted bezel, Leather strap",
+      "authenticity_vectors": [
+        "Rolex C\u00f4tes de Gen\u00e8ve Movement Finishing Visible Through Sapphire Back",
+        "Dualclasp 18k Gold Clasp"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Alligator Leather Strap Sweat Degradation",
+          "cost": 550,
+          "detail": "Original factory alligator strap replacement cost"
+        }
+      ],
+      "deductions": {
+        "missing_guarantee_card": 4000,
+        "missing_box": 800,
+        "worn_strap": 500
+      }
+    },
+    "patek_philippe_nautilus_5711": {
+      "name": "Patek Philippe Nautilus Blue Dial (Ref: 5711/1A-010)",
+      "family": "Holy Trinity Comps",
+      "reference": "5711/1A",
+      "era": "Discontinued (2006 - 2021)",
+      "calibre": "Patek Calibre 324 S C (Patek Philippe Seal, 21k Gold Rotor)",
+      "retail_msrp": 34890,
+      "fair_market_avg": 105000,
+      "market_range": [
+        92000,
+        122000
+      ],
+      "case_spec": "40.0mm x 8.3mm, G\u00e9rald Genta porthole case, Integrated steel bracelet",
+      "authenticity_vectors": [
+        "Horizontal Embossed Dial Gradation from Deep Blue to Black Perimeter",
+        "Satin-Brushed Bezel Flats"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Bezel Chamfer Polishing Distortion",
+          "cost": 8500,
+          "detail": "Polishing alters Genta's octagonal geometry"
+        }
+      ],
+      "deductions": {
+        "missing_certificate_of_origin": 18000,
+        "over_polished_bezel": 12000,
+        "missing_box": 2500
+      }
+    },
+    "ap_royal_oak_15500st": {
+      "name": "Audemars Piguet Royal Oak Selfwinding 41mm Blue",
+      "family": "Holy Trinity Comps",
+      "reference": "15500ST.OO.1220ST.01",
+      "era": "Modern (2019 - Present)",
+      "calibre": "AP Calibre 4302 (70h reserve, 22k Gold skeleton rotor)",
+      "retail_msrp": 27800,
+      "fair_market_avg": 44500,
+      "market_range": [
+        39000,
+        49000
+      ],
+      "case_spec": "41.0mm x 10.4mm, Octagonal bezel with 8 white gold hexagonal screws, Grande Tapisserie dial",
+      "authenticity_vectors": [
+        "Grande Tapisserie Dial Guilloch\u00e9 Clous de Paris Squares",
+        "Hexagonal Bezel Screw Slots Forming Perfect Circle"
+      ],
+      "chronic_faults": [
+        {
+          "issue": "Bezel Hex Screw Alignment Replica Tell",
+          "cost": 4000,
+          "detail": "White gold screws must sit completely flush with bezel plane"
+        }
+      ],
+      "deductions": {
+        "missing_warranty_card": 7500,
+        "missing_box": 1200,
+        "bezel_dents": 3500
+      }
+    }
+  }
+};
 
     function loadSampleRolexListing() {
       document.getElementById('watchSelect').value = 'rolex_daytona_116500ln';
