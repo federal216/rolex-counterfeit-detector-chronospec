@@ -471,18 +471,33 @@
       <!-- Tab Switcher (Dodo vs Whop vs Crypto) -->
       <div class="flex gap-2 bg-black/40 p-1 rounded-xl border border-white/5">
         <button id="modalTabDodoBtn" onclick="switchModalTab('dodo')" class="flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center justify-center gap-1.5 cursor-pointer">
-          <span>💳</span><span>Card / Apple Pay (Dodo)</span>
+          <span>💳</span><span>Card / Apple Pay</span>
         </button>
         <button id="modalTabWhopBtn" onclick="switchModalTab('whop')" class="flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer">
           <span>⚡</span><span>Whop</span>
         </button>
-        <button id="modalTabCryptoBtn" onclick="switchModalTab('crypto')" class="flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer">
-          <span>🪙</span><span>Crypto</span>
+        <button id="modalTabCryptoBtn" onclick="switchModalTab('crypto')" class="relative flex-1 py-2.5 rounded-lg text-xs font-black font-mono uppercase tracking-wider transition bg-emerald-950/70 text-emerald-300 border-2 border-emerald-500/60 hover:border-emerald-400 flex items-center justify-center gap-1.5 cursor-pointer shadow-[0_0_20px_rgba(16,185,129,0.35)] hover:scale-[1.02]">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+          </span>
+          <span>🪙 Crypto</span>
+          <span class="text-[9px] bg-emerald-400 text-black font-black px-1.5 py-0.5 rounded uppercase tracking-tight">VIP</span>
         </button>
       </div>
 
       <!-- TAB 1: DODO PAYMENTS -->
       <div id="modalTabDodoView" class="space-y-4">
+        <!-- SHINY CRYPTO VIP TEASER BANNER INSIDE CARD TAB -->
+        <div onclick="switchModalTab('crypto')" class="p-3.5 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-zinc-950 to-teal-950/80 border-2 border-emerald-500/40 hover:border-emerald-400 text-center cursor-pointer transition-all shadow-[0_0_25px_rgba(16,185,129,0.25)] hover:scale-[1.01] group">
+          <div class="flex items-center justify-center gap-2 text-xs font-mono font-black text-emerald-300 uppercase tracking-wide">
+            <span class="text-base group-hover:scale-125 transition-transform">🪙</span>
+            <span>Prefer 100% Anonymous Checkout? Pay with USDT / USDC</span>
+            <span class="text-emerald-400 text-sm font-black">&rarr;</span>
+          </div>
+          <div class="text-[10px] text-zinc-400 font-mono mt-0.5">Instant On-Chain Settlement · Zero KYC · No Card Declines or Bank Records</div>
+        </div>
+
         <div class="p-4 rounded-2xl bg-zinc-950/80 border border-zinc-800 space-y-3">
           <div class="flex items-center justify-between">
             <span class="text-xs font-mono font-bold text-zinc-300">Total Due Today:</span>
@@ -503,6 +518,16 @@
 
       <!-- TAB 2: WHOP CARD CHECKOUT -->
       <div id="modalTabWhopView" class="space-y-4 hidden">
+        <!-- SHINY CRYPTO VIP TEASER BANNER INSIDE WHOP TAB -->
+        <div onclick="switchModalTab('crypto')" class="p-3.5 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-zinc-950 to-teal-950/80 border-2 border-emerald-500/40 hover:border-emerald-400 text-center cursor-pointer transition-all shadow-[0_0_25px_rgba(16,185,129,0.25)] hover:scale-[1.01] group">
+          <div class="flex items-center justify-center gap-2 text-xs font-mono font-black text-emerald-300 uppercase tracking-wide">
+            <span class="text-base group-hover:scale-125 transition-transform">🪙</span>
+            <span>Prefer 100% Anonymous Checkout? Pay with USDT / USDC</span>
+            <span class="text-emerald-400 text-sm font-black">&rarr;</span>
+          </div>
+          <div class="text-[10px] text-zinc-400 font-mono mt-0.5">Instant On-Chain Settlement · Zero KYC · No Card Declines or Bank Records</div>
+        </div>
+
         <div class="p-4 rounded-2xl bg-zinc-950/80 border border-zinc-800 space-y-3">
           <div class="flex items-center justify-between">
             <span class="text-xs font-mono font-bold text-zinc-300">Total Due Today:</span>
@@ -523,6 +548,17 @@
 
       <!-- TAB 2: CRYPTO CHECKOUT -->
       <div id="modalTabCryptoView" class="space-y-4 hidden">
+        <!-- GLOWING VIP CRYPTO INCENTIVE BANNER -->
+        <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950 via-zinc-950 to-teal-950 border-2 border-emerald-400/80 shadow-[0_0_35px_rgba(16,185,129,0.35)] text-center space-y-1 relative overflow-hidden">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/50 text-emerald-300 font-mono text-[11px] font-black uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            VIP WEB3 SETTLEMENT • 100% ANONYMOUS
+          </div>
+          <h4 class="text-sm font-black text-white">Direct Cold/Hot Wallet Instant Unlock</h4>
+          <p class="text-[11px] text-zinc-300 max-w-md mx-auto leading-relaxed">
+            No KYC verification, no card decline risk, zero bank paper trail. 1-second auto-appraisal unlock upon blockchain confirmation.
+          </p>
+        </div>
         <div class="flex gap-2">
           <button id="chronoUsdtBtn" onclick="switchChronoCryptoCoin('usdt')" class="flex-1 py-2 rounded-lg text-xs font-bold font-mono transition bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 cursor-pointer">
             🟢 USDT (TRC20)
@@ -1500,27 +1536,36 @@
       const whopBtn = document.getElementById('modalTabWhopBtn');
       const cryptoBtn = document.getElementById('modalTabCryptoBtn');
 
+      const cardActive = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center justify-center gap-1.5 cursor-pointer';
+      const cardInactive = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer';
+
+      const whopActive = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-orange-500/20 text-orange-300 border border-orange-500/40 flex items-center justify-center gap-1.5 cursor-pointer';
+      const whopInactive = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer';
+
+      const cryptoActive = 'relative flex-1 py-2.5 rounded-lg text-xs font-black font-mono uppercase tracking-wider transition bg-gradient-to-r from-emerald-500/30 to-teal-500/20 text-emerald-300 border-2 border-emerald-400 flex items-center justify-center gap-1.5 cursor-pointer shadow-[0_0_25px_rgba(16,185,129,0.5)] scale-[1.02]';
+      const cryptoInactive = 'relative flex-1 py-2.5 rounded-lg text-xs font-bold font-mono uppercase tracking-wider transition bg-emerald-950/40 text-emerald-300 border border-emerald-500/50 hover:border-emerald-300 flex items-center justify-center gap-1.5 cursor-pointer shadow-[0_0_15px_rgba(16,185,129,0.2)]';
+
       if (tab === 'dodo') {
         if (dodoView) dodoView.classList.remove('hidden');
         if (whopView) whopView.classList.add('hidden');
         if (cryptoView) cryptoView.classList.add('hidden');
-        if (dodoBtn) dodoBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center justify-center gap-1.5 cursor-pointer';
-        if (whopBtn) whopBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer';
-        if (cryptoBtn) cryptoBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer';
+        if (dodoBtn) dodoBtn.className = cardActive;
+        if (whopBtn) whopBtn.className = whopInactive;
+        if (cryptoBtn) cryptoBtn.className = cryptoInactive;
       } else if (tab === 'whop') {
         if (dodoView) dodoView.classList.add('hidden');
         if (whopView) whopView.classList.remove('hidden');
         if (cryptoView) cryptoView.classList.add('hidden');
-        if (whopBtn) whopBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-orange-500/20 text-orange-300 border border-orange-500/40 flex items-center justify-center gap-1.5 cursor-pointer';
-        if (dodoBtn) dodoBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer';
-        if (cryptoBtn) cryptoBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer';
+        if (dodoBtn) dodoBtn.className = cardInactive;
+        if (whopBtn) whopBtn.className = whopActive;
+        if (cryptoBtn) cryptoBtn.className = cryptoInactive;
       } else {
         if (dodoView) dodoView.classList.add('hidden');
         if (whopView) whopView.classList.add('hidden');
         if (cryptoView) cryptoView.classList.remove('hidden');
-        if (cryptoBtn) cryptoBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center justify-center gap-1.5 cursor-pointer';
-        if (dodoBtn) dodoBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer';
-        if (whopBtn) whopBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer';
+        if (dodoBtn) dodoBtn.className = cardInactive;
+        if (whopBtn) whopBtn.className = whopInactive;
+        if (cryptoBtn) cryptoBtn.className = cryptoActive;
       }
     }
 
