@@ -1,10 +1,10 @@
 const https = require('https');
 
 const LIVE_API_KEY = process.env.DODO_PAYMENTS_LIVE_KEY || 'dodo_live_xNuMmrRTOkHMLZY7.pEQXFVs-wu2XLVkeKX7xvdvcH9v71jbN6FdtMEyTPzCJLR0j';
-const LIVE_PRODUCT_ID = process.env.DODO_LIVE_PRODUCT_ID || 'pdt_0NsdaQ7P6h6NjAauG3k4P';
+const LIVE_PRODUCT_ID = process.env.DODO_LIVE_PRODUCT_ID || 'pdt_0Nsi1qHuRLnD6c4NmHyfK';
 
 const TEST_API_KEY = process.env.DODO_PAYMENTS_TEST_KEY || 'dodo_test_0_u-P96zqKPvQVU1.lwM9WJvPchJR4POMqkT0iVuHclz9ul4Jfbf8Jd_-JJZSuM4Q';
-const TEST_PRODUCT_ID = process.env.DODO_TEST_PRODUCT_ID || 'pdt_0NsdXpb0AXJ8AeTfGANYe';
+const TEST_PRODUCT_ID = process.env.DODO_TEST_PRODUCT_ID || 'pdt_0Nsi1qHuRLnD6c4NmHyfK';
 
 function createCheckoutSession(host, apiKey, productId, email, buyerName, returnUrl) {
   return new Promise((resolve, reject) => {

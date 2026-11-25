@@ -10,7 +10,8 @@
 - **Portal:** [https://dodopayments.com/](https://dodopayments.com/)
 - **Kullanıcı Hesabı:** `karakoc.i@gmail.com`
 - **Business ID:** `bus_0NsdOsgyw5JvaPeKIIn2R`
-- **Live Product ID:** `pdt_0NsdaQ7P6h6NjAauG3k4P` ($89.00 USD)
+- **Product ID:** `pdt_0Nsi1qHuRLnD6c4NmHyfK` ($89.00 USD)
+- **Doğrudan Ödeme Bağlantısı:** [https://test.dodopayments.com/buy/pdt_0Nsi1qHuRLnD6c4NmHyfK](https://test.dodopayments.com/buy/pdt_0Nsi1qHuRLnD6c4NmHyfK)
 - **Desteklenen Ödeme Tipleri:** Apple Pay, Google Pay, Global Kredi/Banka Kartları (Visa, Mastercard, Amex)
 - **Entegrasyon Dosyaları:**
   - `api/dodo/initialize.js` (Checkout oturumu başlatıcı)

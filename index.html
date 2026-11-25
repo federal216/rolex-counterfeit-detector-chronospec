@@ -1529,8 +1529,10 @@
       const originalText = btn ? btn.innerHTML : '';
       if (btn) {
         btn.disabled = true;
-        btn.innerHTML = 'Connecting to Dodo Payments...';
+        btn.innerHTML = `<span class="flex items-center justify-center gap-2"><span>Connecting to Dodo Payments...</span></span>`;
       }
+      const directDodoUrl = 'https://test.dodopayments.com/buy/pdt_0Nsi1qHuRLnD6c4NmHyfK';
+
       try {
         const res = await fetch('/api/dodo/initialize', {
           method: 'POST',
@@ -1543,15 +1545,15 @@
           return;
         }
       } catch (e) {
-        console.warn('Dodo API error, redirecting to Whop fallback:', e);
+        console.warn('Dodo API fallback to direct link:', e);
       } finally {
         if (btn) {
           btn.disabled = false;
           btn.innerHTML = originalText;
         }
       }
-      // Fallback
-      window.location.href = 'https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier';
+      // Direct checkout URL fallback for static GitHub Pages host
+      window.location.href = directDodoUrl;
     }
     function switchChronoCryptoCoin(coin) {
       const usdtV = document.getElementById('chronoUsdtView');
