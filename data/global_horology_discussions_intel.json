@@ -1,0 +1,26 @@
+[
+  {
+    "id": "INTEL-ROLEX-01",
+    "source": "RolexForums / Technical Watchmaking Section",
+    "topic": "Calibre 3235 Low Amplitude Service Bulletin (2018-2022)",
+    "summary": "Second wheel pinion jewel lubricant drying causes amplitude drop to 180 deg. Requires full teardown and barrel bridge check.",
+    "dealer_counter_value_usd": 1250,
+    "severity": "CRITICAL"
+  },
+  {
+    "id": "INTEL-ROLEX-02",
+    "source": "RWI / ReplicaWatchInfo Teardown Labs",
+    "topic": "Clean Factory Clasp Code Blacklist (6R9, 7X2, 1NQ)",
+    "summary": "Modern Submariners found with clasp codes 6R9 or 7X2 are verified Clean Factory counterfeit assemblies sold as genuine.",
+    "dealer_counter_value_usd": 14000,
+    "severity": "FATAL_COUNTERFEIT"
+  },
+  {
+    "id": "INTEL-ROLEX-03",
+    "source": "WatchUSeek / Horology Market Comps",
+    "topic": "Polished Lug Chamfer Destruction on 5-digit and 6-digit Submariners",
+    "summary": "Rotary buffing wheels destroy the sharp 45 degree factory case bevel, dropping collector liquidation appeal by 20%.",
+    "dealer_counter_value_usd": 1600,
+    "severity": "HIGH"
+  }
+]
