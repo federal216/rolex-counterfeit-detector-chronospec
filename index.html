@@ -1980,147 +1980,164 @@
       const dateStr = new Date().toISOString().split('T')[0];
 
       function renderHeader(pageNum, title) {
-        doc.setFillColor(6, 9, 14);
+        // Pure White Page Background
+        doc.setFillColor(255, 255, 255);
         doc.rect(0, 0, 612, 792, 'F');
+
+        // Executive Top Bar: Gold Accent Strip + Dark Slate Header Container
         doc.setFillColor(212, 175, 55);
-        doc.rect(40, 35, 532, 4, 'F');
+        doc.rect(40, 26, 532, 3, 'F');
+        doc.setFillColor(15, 23, 42);
+        doc.rect(40, 29, 532, 55, 'F');
+
         doc.setTextColor(255, 255, 255);
         doc.setFont('helvetica', 'bold');
-        doc.setFontSize(16);
-        doc.text("CHRONOSPEC AI — HOROLOGICAL FORENSIC DOSSIER", 40, 65);
-        doc.setFontSize(9);
-        doc.setTextColor(148, 163, 184);
+        doc.setFontSize(14);
+        doc.text("CHRONOSPEC AI — HOROLOGICAL FORENSIC DOSSIER", 54, 52);
+        doc.setFontSize(8.5);
+        doc.setTextColor(203, 213, 225);
         doc.setFont('courier', 'normal');
-        doc.text(title + " | DATE: " + dateStr + " | PAGE " + pageNum + " OF 10", 40, 80);
-        doc.setDrawColor(27, 36, 54);
-        doc.line(40, 90, 572, 90);
+        doc.text(title + " | DATE: " + dateStr + " | PAGE " + pageNum + " OF 10", 54, 70);
+
+        doc.setDrawColor(226, 232, 240);
+        doc.setLineWidth(1);
+        doc.line(40, 94, 572, 94);
       }
 
       function renderFooter(pageNum) {
+        doc.setDrawColor(226, 232, 240);
+        doc.setLineWidth(1);
+        doc.line(40, 748, 572, 748);
+
         doc.setTextColor(100, 116, 139);
-        doc.setFontSize(7);
+        doc.setFontSize(6.5);
         doc.setFont('helvetica', 'normal');
-        doc.text("CHRONOSPEC AI · AUTONOMOUS ALGORITHMIC INTELLIGENCE · NOT AFFILIATED WITH ROLEX SA · DOES NOT REPLACE IN-PERSON APPRAISAL", 40, 756);
+        doc.text("CHRONOSPEC AI · AUTONOMOUS ALGORITHMIC FORENSICS · YAPAY ZEKA VE ARŞİV ARAŞTIRMASIDIR · GERÇEK EKSPERTİZ YERİNE GEÇMEZ", 40, 760);
         doc.setFont('courier', 'normal');
-        doc.text("PAGE " + pageNum + " OF 10  |  SECURITY HASH: SHA-256-ROLEX-SEC-2026-X89  |  AUDIT REPUTATION INDEX: 4.92 / 5.0", 40, 768);
+        doc.text("PAGE " + pageNum + " OF 10  |  SECURITY HASH: SHA-256-ROLEX-SEC-2026-X89  |  AUDIT REPUTATION INDEX: 4.92 / 5.0", 40, 772);
       }
 
       // ── PAGE 1: EXECUTIVE APPRAISAL & VALUATION CERTIFICATE ──
       renderHeader(1, "SECTION 1: EXECUTIVE APPRAISAL & VALUE CERTIFICATE");
 
-      doc.setFillColor(12, 18, 29);
-      doc.roundedRect(40, 110, 532, 120, 8, 8, 'F');
-      doc.setTextColor(245, 158, 11);
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(16);
-      doc.text(model.name, 60, 140);
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(226, 232, 240);
+      doc.setLineWidth(1);
+      doc.roundedRect(40, 108, 532, 122, 8, 8, 'FD');
 
-      doc.setTextColor(255, 255, 255);
-      doc.setFontSize(10);
+      doc.setTextColor(180, 83, 9);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(15);
+      doc.text(model.name, 60, 136);
+
+      doc.setTextColor(30, 41, 59);
+      doc.setFontSize(9.5);
       doc.setFont('helvetica', 'normal');
-      doc.text("Factory Reference: " + model.reference, 60, 165);
-      doc.text("Calibre: " + model.calibre, 60, 180);
-      doc.text("Case Specification: " + model.case_spec, 60, 195);
-      doc.text("Production Period: " + model.era, 60, 210);
+      doc.text("Factory Reference: " + model.reference, 60, 160);
+      doc.text("Calibre: " + model.calibre, 60, 176);
+      doc.text("Case Specification: " + model.case_spec, 60, 192);
+      doc.text("Production Period: " + model.era, 60, 208);
 
-      // 3 Financial Boxes
-      doc.setFillColor(16, 22, 34);
-      doc.roundedRect(40, 250, 170, 90, 6, 6, 'F');
-      doc.roundedRect(220, 250, 170, 90, 6, 6, 'F');
-      doc.roundedRect(400, 250, 172, 90, 6, 6, 'F');
+      // 3 Financial Metric Cards
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(226, 232, 240);
+      doc.roundedRect(40, 246, 170, 90, 6, 6, 'FD');
+      doc.roundedRect(220, 246, 170, 90, 6, 6, 'FD');
+      doc.roundedRect(400, 246, 172, 90, 6, 6, 'FD');
 
-      doc.setFontSize(9);
-      doc.setTextColor(148, 163, 184);
-      doc.text("SELLER ASKING PRICE", 55, 275);
-      doc.text("MARKET BENCHMARK", 235, 275);
-      doc.text("TARGET COUNTER-OFFER", 415, 275);
+      doc.setFontSize(8.5);
+      doc.setTextColor(100, 116, 139);
+      doc.text("SELLER ASKING PRICE", 55, 272);
+      doc.text("MARKET BENCHMARK", 235, 272);
+      doc.text("TARGET COUNTER-OFFER", 415, 272);
 
       doc.setFontSize(16);
       doc.setFont('helvetica', 'bold');
-      doc.setTextColor(255, 255, 255);
-      doc.text(asking, 55, 305);
-      doc.setTextColor(16, 185, 129);
-      doc.text("$" + model.fair_market_avg.toLocaleString(), 235, 305);
-      doc.setTextColor(245, 158, 11);
-      doc.text(target, 415, 305);
+      doc.setTextColor(15, 23, 42);
+      doc.text(asking, 55, 304);
+      doc.setTextColor(5, 150, 105);
+      doc.text("$" + model.fair_market_avg.toLocaleString(), 235, 304);
+      doc.setTextColor(180, 83, 9);
+      doc.text(target, 415, 304);
 
       // Certificate Seal Banner
       doc.setFillColor(212, 175, 55);
-      doc.roundedRect(40, 365, 532, 50, 6, 6, 'F');
-      doc.setTextColor(0, 0, 0);
-      doc.setFontSize(11);
+      doc.roundedRect(40, 354, 532, 48, 6, 6, 'F');
+      doc.setTextColor(15, 23, 42);
+      doc.setFontSize(10.5);
       doc.setFont('helvetica', 'bold');
-      doc.text("OFFICIAL CHRONOSPEC CERTIFICATION & REPUTATION GUARANTEE", 55, 388);
-      doc.setFontSize(9);
+      doc.text("OFFICIAL CHRONOSPEC CERTIFICATION & REPUTATION GUARANTEE", 55, 375);
+      doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
-      doc.text("Rated 4.92 / 5.0 across 217+ verified collectors & Chrono24 international buyers.", 55, 403);
+      doc.text("Rated 4.92 / 5.0 across 217+ verified collectors & Chrono24 international buyers.", 55, 390);
 
       // Deduction Summary Table
-      doc.setTextColor(255, 255, 255);
+      doc.setTextColor(15, 23, 42);
       doc.setFont('helvetica', 'bold');
-      doc.setFontSize(12);
-      doc.text("MANDATORY DEDUCTION APPLIED TO ASKING PRICE", 40, 445);
+      doc.setFontSize(11);
+      doc.text("MANDATORY DEDUCTIONS APPLIED TO ASKING PRICE", 40, 428);
 
-      let dy = 470;
-      doc.setFontSize(9);
+      let dy = 450;
+      doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
       for (const [k, v] of Object.entries(model.deductions)) {
-        doc.setFillColor(16, 22, 34);
-        doc.roundedRect(40, dy - 12, 532, 22, 4, 4, 'F');
-        doc.setTextColor(203, 213, 225);
+        doc.setFillColor(248, 250, 252);
+        doc.setDrawColor(226, 232, 240);
+        doc.roundedRect(40, dy - 12, 532, 22, 4, 4, 'FD');
+        doc.setTextColor(51, 65, 85);
         doc.text(k.replace(/_/g, ' ').toUpperCase(), 55, dy + 2);
-        doc.setTextColor(245, 158, 11);
+        doc.setTextColor(220, 38, 38);
         doc.setFont('helvetica', 'bold');
         doc.text("-$" + v.toLocaleString(), 510, dy + 2);
         doc.setFont('helvetica', 'normal');
-        dy += 26;
+        dy += 25;
       }
-            // ── EMBED UPLOADED WATCH PHOTO (IF AVAILABLE) ──
+
+      // ── EMBED UPLOADED WATCH PHOTO (IF AVAILABLE) ──
       if (typeof uploadedWatchPhotoDataUrl !== 'undefined' && uploadedWatchPhotoDataUrl) {
         try {
-          doc.setFillColor(16, 22, 34);
-          doc.roundedRect(380, 110, 192, 120, 6, 6, 'F');
-          doc.addImage(uploadedWatchPhotoDataUrl, 'JPEG', 386, 115, 180, 110);
+          doc.setFillColor(248, 250, 252);
           doc.setDrawColor(212, 175, 55);
           doc.setLineWidth(1.5);
-          doc.roundedRect(386, 115, 180, 110, 4, 4, 'D');
+          doc.roundedRect(380, 108, 192, 122, 6, 6, 'FD');
+          doc.addImage(uploadedWatchPhotoDataUrl, 'JPEG', 386, 114, 180, 110);
           doc.setFontSize(7);
-          doc.setTextColor(212, 175, 55);
+          doc.setTextColor(180, 83, 9);
           doc.text("AI FORENSIC IMAGE CAPTURE", 396, 218);
         } catch(e) { console.warn("Watch image embed note:", e); }
       }
 
       // ── COMPLIANCE & LEGAL DISCLAIMER BOX (PAGE 1) ──
-      doc.setFillColor(12, 18, 29);
-      doc.roundedRect(40, 565, 430, 115, 6, 6, 'F');
-      doc.setDrawColor(27, 36, 54);
-      doc.roundedRect(40, 565, 430, 115, 6, 6, 'D');
-      doc.setTextColor(245, 158, 11);
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(226, 232, 240);
+      doc.setLineWidth(1);
+      doc.roundedRect(40, 580, 430, 120, 6, 6, 'FD');
+      doc.setTextColor(180, 83, 9);
       doc.setFontSize(8.5);
       doc.setFont('helvetica', 'bold');
-      doc.text("LEGAL COMPLIANCE & ALGORITHMIC INTELLIGENCE DISCLAIMER", 52, 583);
-      doc.setTextColor(148, 163, 184);
+      doc.text("LEGAL COMPLIANCE & ALGORITHMIC INTELLIGENCE DISCLAIMER", 52, 598);
+      doc.setTextColor(71, 85, 105);
       doc.setFontSize(7.5);
       doc.setFont('helvetica', 'normal');
-      doc.text("1. Algorithmic Intelligence Synthesis: This report is generated by autonomous AI models analyzing auction", 52, 599);
-      doc.text("   sales, secondary market dealer comps, manufacturer technical bulletins, and horological archives.", 52, 611);
-      doc.text("2. Non-Warranty Notice: ChronoSpec AI is an independent software research tool and is not affiliated with", 52, 623);
-      doc.text("   Rolex SA. This document does NOT replace an in-person physical inspection by an authorized watchmaker.", 52, 635);
-      doc.text("3. Buyer Due Diligence: Users assume full legal and financial responsibility for their private transactions.", 52, 647);
-      doc.text("   All pricing models, deductibles, and counter-scripts are algorithmic estimates for negotiation leverage.", 52, 659);
+      doc.text("1. Algorithmic Intelligence Synthesis: This report is generated by autonomous AI models analyzing auction", 52, 614);
+      doc.text("   sales, secondary market dealer comps, manufacturer technical bulletins, and horological archives.", 52, 626);
+      doc.text("2. Non-Warranty Notice: ChronoSpec AI is an independent software research tool and is not affiliated with", 52, 638);
+      doc.text("   Rolex SA. This document does NOT replace an in-person physical inspection by an authorized watchmaker.", 52, 650);
+      doc.text("3. Buyer Due Diligence: Users assume full legal and financial responsibility for their private transactions.", 52, 662);
+      doc.text("   All pricing models, deductibles, and counter-scripts are algorithmic estimates for negotiation leverage.", 52, 674);
 
       // ── OFFICIAL GOLD FORENSIC SEAL STAMP ──
       doc.setDrawColor(212, 175, 55);
       doc.setLineWidth(2);
-      doc.circle(522, 622, 36, 'D');
-      doc.circle(522, 622, 32, 'D');
+      doc.circle(522, 640, 36, 'D');
+      doc.circle(522, 640, 32, 'D');
       doc.setFontSize(6.5);
       doc.setFont('helvetica', 'bold');
-      doc.setTextColor(212, 175, 55);
-      doc.text("SWISS HOROLOGY", 494, 618);
-      doc.text("FORENSIC AUDIT", 495, 628);
+      doc.setTextColor(180, 83, 9);
+      doc.text("SWISS HOROLOGY", 494, 636);
+      doc.text("FORENSIC AUDIT", 495, 646);
       doc.setFontSize(5.5);
-      doc.text("VERIFIED 2026", 498, 636);
+      doc.text("VERIFIED 2026", 498, 654);
 
       renderFooter(1);
 
@@ -2128,71 +2145,76 @@
       doc.addPage();
       renderHeader(2, "SECTION 2: MACRO DIAL & TYPOGRAPHY AUTHENTICATION FORENSICS");
 
-      doc.setTextColor(255, 255, 255);
-      doc.setFontSize(12);
+      doc.setTextColor(15, 23, 42);
+      doc.setFontSize(11);
       doc.setFont('helvetica', 'bold');
       doc.text("FACTORY DIAL PAD-PRINTING & CORONET GEOMETRY CHECKLIST", 40, 115);
 
-      let py2 = 140;
+      let py2 = 138;
       model.authenticity_vectors.forEach((vec, idx) => {
-        doc.setFillColor(16, 22, 34);
-        doc.roundedRect(40, py2 - 12, 532, 40, 6, 6, 'F');
-        doc.setFillColor(16, 185, 129);
-        doc.circle(55, py2 + 8, 4, 'F');
-        doc.setTextColor(255, 255, 255);
-        doc.setFontSize(9);
+        doc.setFillColor(248, 250, 252);
+        doc.setDrawColor(226, 232, 240);
+        doc.roundedRect(40, py2 - 12, 532, 38, 6, 6, 'FD');
+        doc.setFillColor(5, 150, 105);
+        doc.circle(55, py2 + 7, 4, 'F');
+        doc.setTextColor(15, 23, 42);
+        doc.setFontSize(8.5);
         doc.setFont('helvetica', 'bold');
         doc.text("TEST " + (idx + 1) + ":", 70, py2 + 2);
         doc.setFont('helvetica', 'normal');
-        doc.setTextColor(203, 213, 225);
-        doc.text(vec, 70, py2 + 16, { maxWidth: 480 });
-        py2 += 48;
+        doc.setTextColor(51, 65, 85);
+        doc.text(vec, 70, py2 + 15, { maxWidth: 480 });
+        py2 += 44;
       });
 
       // Dial Typography Explanations
-      doc.setFillColor(12, 18, 29);
-      doc.roundedRect(40, 360, 532, 180, 8, 8, 'F');
-      doc.setTextColor(245, 158, 11);
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(226, 232, 240);
+      doc.roundedRect(40, 335, 532, 170, 8, 8, 'FD');
+      doc.setTextColor(180, 83, 9);
       doc.setFont('helvetica', 'bold');
-      doc.setFontSize(11);
-      doc.text("CRITICAL REPLICA 'SUPERCLONE' DETECTION METRICS", 60, 385);
+      doc.setFontSize(10.5);
+      doc.text("CRITICAL REPLICA 'SUPERCLONE' DETECTION METRICS", 60, 358);
 
-      doc.setTextColor(203, 213, 225);
-      doc.setFontSize(9);
+      doc.setTextColor(51, 65, 85);
+      doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
-      doc.text("1. Laser-Etched Coronet (LEC): Exactly 7 dots in the lower oval ring at 6 o'clock; 2 depths; invisible without 10x loupe.", 60, 405);
-      doc.text("2. Hand Stack Pinion & 3D Cap: Centre pinion must be domed and mirror-polished; flat punched clone hands indicate replica.", 60, 420);
-      doc.text("3. Date Cyclops 'Black Hole' AR: Pure black anti-reflective under-coating with zero optical distortion at 45° angle.", 60, 435);
-      doc.text("4. Free-Sprung Balance Bridge: Genuine 3135/3235 calibres use Microstella rim screws; ANY index regulator arm proves clone.", 60, 450);
-      doc.text("5. Replica Clasp Code Blacklist: Flagged counterfeit stampings: Clean Factory (6R9, 7X2, 1NQ), VSF (7XR, 126X, 3P3, K9U).", 60, 465);
-      doc.text("6. Calibre 3235 Lubrication Collapse: Second wheel jewel oil drying drops amplitude below 190° (-$1,250 RSC overhaul).", 60, 480);
-      doc.text("7. Solid End Link (SEL) Recess: Factory tolerance requires 0.25mm drop below lug chamfer; flush fit confirms aftermarket.", 60, 495);
-            // ── HISTORICAL SERIAL NUMBER & COUNTRY CODE MATRIX (PAGE 2) ──
-      doc.setFillColor(16, 22, 34);
-      doc.roundedRect(40, 520, 532, 215, 6, 6, 'F');
-      doc.setTextColor(16, 185, 129);
+      doc.text("1. Laser-Etched Coronet (LEC): Exactly 7 dots in the lower oval ring at 6 o'clock; 2 depths; invisible without 10x loupe.", 60, 378);
+      doc.text("2. Hand Stack Pinion & 3D Cap: Centre pinion must be domed and mirror-polished; flat punched clone hands indicate replica.", 60, 393);
+      doc.text("3. Date Cyclops 'Black Hole' AR: Pure black anti-reflective under-coating with zero optical distortion at 45° angle.", 60, 408);
+      doc.text("4. Free-Sprung Balance Bridge: Genuine 3135/3235 calibres use Microstella rim screws; ANY index regulator arm proves clone.", 60, 423);
+      doc.text("5. Replica Clasp Code Blacklist: Flagged counterfeit stampings: Clean Factory (6R9, 7X2, 1NQ), VSF (7XR, 126X, 3P3, K9U).", 60, 438);
+      doc.text("6. Calibre 3235 Lubrication Collapse: Second wheel jewel oil drying drops amplitude below 190° (-$1,250 RSC overhaul).", 60, 453);
+      doc.text("7. Solid End Link (SEL) Recess: Factory tolerance requires 0.25mm drop below lug chamfer; flush fit confirms aftermarket.", 60, 468);
+
+      // ── HISTORICAL SERIAL NUMBER & COUNTRY CODE MATRIX (PAGE 2) ──
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(226, 232, 240);
+      doc.roundedRect(40, 520, 532, 215, 6, 6, 'FD');
+      doc.setTextColor(5, 150, 105);
       doc.setFontSize(10);
       doc.setFont('helvetica', 'bold');
       doc.text("HISTORICAL PRODUCTION SERIAL PREFIXES & CLIENT COUNTRY CODE MATRIX", 55, 542);
       
-      doc.setTextColor(203, 213, 225);
+      doc.setTextColor(51, 65, 85);
       doc.setFontSize(8);
       doc.setFont('helvetica', 'normal');
       doc.text("Rolex transitioned to 8-character randomized alphanumeric serial numbers in late 2010. For pre-2010 timepieces,", 55, 560);
       doc.text("verify the serial prefix engraved at the 6 o'clock case lugs matches the warranty guarantee paperwork:", 55, 572);
 
       // Mini 2-column table
-      doc.setFillColor(12, 18, 29);
-      doc.roundedRect(55, 582, 240, 138, 4, 4, 'F');
-      doc.roundedRect(305, 582, 252, 138, 4, 4, 'F');
+      doc.setFillColor(255, 255, 255);
+      doc.setDrawColor(226, 232, 240);
+      doc.roundedRect(55, 582, 240, 138, 4, 4, 'FD');
+      doc.roundedRect(305, 582, 252, 138, 4, 4, 'FD');
 
       doc.setFont('helvetica', 'bold');
-      doc.setTextColor(245, 158, 11);
+      doc.setTextColor(180, 83, 9);
       doc.text("PRODUCTION YEAR PREFIX REGISTRY", 65, 598);
       doc.text("GUARANTEE CARD CLIENT CODES", 315, 598);
 
       doc.setFont('courier', 'normal');
-      doc.setTextColor(220, 225, 235);
+      doc.setTextColor(51, 65, 85);
       doc.text("• Random (8-char) : 2010 - Present", 65, 615);
       doc.text("• G-Serial Prefix : 2010", 65, 630);
       doc.text("• V-Serial Prefix : 2008 - 2009", 65, 645);
@@ -2215,54 +2237,58 @@
       doc.addPage();
       renderHeader(3, "SECTION 3: CASE GEOMETRY, LUG CHAMFERS & OVER-POLISHING AUDIT");
 
-      doc.setFillColor(12, 18, 29);
-      doc.roundedRect(40, 115, 532, 210, 8, 8, 'F');
-      doc.setTextColor(245, 158, 11);
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(226, 232, 240);
+      doc.roundedRect(40, 115, 532, 210, 8, 8, 'FD');
+      doc.setTextColor(180, 83, 9);
       doc.setFont('helvetica', 'bold');
-      doc.setFontSize(12);
+      doc.setFontSize(11.5);
       doc.text("LUG HORN THICKNESS & FACTORY BEVEL PRESERVATION MATRIX", 60, 140);
 
-      doc.setTextColor(203, 213, 225);
-      doc.setFontSize(9);
+      doc.setTextColor(51, 65, 85);
+      doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
       doc.text("Pre-owned luxury watches lose 15% to 30% of their investment value when polished with", 60, 165);
       doc.text("amateur rotary wheels. ChronoSpec inspects four critical geometric surfaces:", 60, 180);
 
-      doc.setTextColor(255, 255, 255);
+      doc.setTextColor(15, 23, 42);
       doc.setFont('helvetica', 'bold');
-      doc.text("• Case Chamfer Sharpness: Factory 45° beveled edge must be razor-sharp with no softening.", 70, 210);
-      doc.text("• Springbar Hole Clearance: Distance from lug tip to hole perimeter must exceed 1.8mm.", 70, 230);
-      doc.text("• Crown Guard Symmetrical Mass: Crown guard shoulders must have identical curvature.", 70, 250);
-      doc.text("• Laser-Welded Restoration: Check for porosity micro-pitting indicative of rebuilt metal.", 70, 270);
-      doc.text("• Bracelet Pin Sag: Maximum allowable lateral droop is under 20 degrees under gravity test.", 70, 290);
+      doc.text("• Case Chamfer Sharpness: Factory 45° beveled edge must be razor-sharp with no softening.", 70, 208);
+      doc.text("• Springbar Hole Clearance: Distance from lug tip to hole perimeter must exceed 1.8mm.", 70, 228);
+      doc.text("• Crown Guard Symmetrical Mass: Crown guard shoulders must have identical curvature.", 70, 248);
+      doc.text("• Laser-Welded Restoration: Check for porosity micro-pitting indicative of rebuilt metal.", 70, 268);
+      doc.text("• Bracelet Pin Sag: Maximum allowable lateral droop is under 20 degrees under gravity test.", 70, 288);
 
       // Bracelet & Clasp Audit
-      doc.setFillColor(16, 22, 34);
-      doc.roundedRect(40, 350, 532, 180, 8, 8, 'F');
-      doc.setTextColor(16, 185, 129);
-      doc.setFontSize(11);
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(226, 232, 240);
+      doc.roundedRect(40, 345, 532, 175, 8, 8, 'FD');
+      doc.setTextColor(5, 150, 105);
+      doc.setFontSize(10.5);
       doc.setFont('helvetica', 'bold');
-      doc.text("BRACELET & CLASP TOLERANCE AUDIT", 60, 375);
+      doc.text("BRACELET & CLASP TOLERANCE AUDIT", 60, 370);
 
-      doc.setTextColor(203, 213, 225);
-      doc.setFontSize(9);
-      doc.setFont('helvetica', 'normal');
-      doc.text("Clasp Code & Serial Timing: Clasp stamping must correspond with the watch case production year.", 60, 400);
-      doc.text("Glidelock / Easylink Detents: Micro-adjustment tooth tracks must hold 5kg of linear tension.", 60, 420);
-      doc.text("Screw-in Links: Screws must feature Loctite 222 threadlocker residue; stripped heads demand -$350.", 60, 440);
-            // ── ACOUSTIC TIMEGRAPHER TELEMETRY & ESCAPEMENT SPECS (PAGE 3) ──
-      doc.setFillColor(16, 22, 34);
-      doc.roundedRect(40, 540, 532, 195, 6, 6, 'F');
-      doc.setTextColor(245, 158, 11);
-      doc.setFontSize(10);
-      doc.setFont('helvetica', 'bold');
-      doc.text("ESCAPEMENT ARCHITECTURE & ACOUSTIC TIMEGRAPHER TOLERANCES", 55, 562);
-
-      doc.setTextColor(203, 213, 225);
+      doc.setTextColor(51, 65, 85);
       doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
-      doc.text("Calibre 3235 features Rolex's proprietary nickel-phosphorus Chronergy escapement with high energy efficiency.", 55, 580);
-      doc.text("When mounting timepiece on a professional Witschi / Weishi timegrapher, verify all 5 test positions:", 55, 594);
+      doc.text("Clasp Code & Serial Timing: Clasp stamping must correspond with the watch case production year.", 60, 395);
+      doc.text("Glidelock / Easylink Detents: Micro-adjustment tooth tracks must hold 5kg of linear tension.", 60, 415);
+      doc.text("Screw-in Links: Screws must feature Loctite 222 threadlocker residue; stripped heads demand -$350.", 60, 435);
+
+      // ── ACOUSTIC TIMEGRAPHER TELEMETRY & ESCAPEMENT SPECS (PAGE 3) ──
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(226, 232, 240);
+      doc.roundedRect(40, 535, 532, 195, 6, 6, 'FD');
+      doc.setTextColor(180, 83, 9);
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'bold');
+      doc.text("ESCAPEMENT ARCHITECTURE & ACOUSTIC TIMEGRAPHER TOLERANCES", 55, 558);
+
+      doc.setTextColor(51, 65, 85);
+      doc.setFontSize(8);
+      doc.setFont('helvetica', 'normal');
+      doc.text("Calibre 3235 features Rolex's proprietary nickel-phosphorus Chronergy escapement with high energy efficiency.", 55, 575);
+      doc.text("When mounting timepiece on a professional Witschi / Weishi timegrapher, verify all 5 test positions:", 55, 588);
 
       // 4 Tech Specs Cards
       const specs = [
@@ -2274,24 +2300,23 @@
 
       let sx = 55;
       specs.forEach(s => {
-        doc.setFillColor(12, 18, 29);
-        doc.roundedRect(sx, 610, 118, 110, 4, 4, 'F');
-        doc.setDrawColor(27, 36, 54);
-        doc.roundedRect(sx, 610, 118, 110, 4, 4, 'D');
+        doc.setFillColor(255, 255, 255);
+        doc.setDrawColor(226, 232, 240);
+        doc.roundedRect(sx, 605, 118, 110, 4, 4, 'FD');
 
         doc.setFont('helvetica', 'bold');
         doc.setFontSize(7.5);
-        doc.setTextColor(148, 163, 184);
-        doc.text(s.label, sx + 8, 628);
+        doc.setTextColor(100, 116, 139);
+        doc.text(s.label, sx + 8, 624);
 
-        doc.setFontSize(9);
-        doc.setTextColor(16, 185, 129);
-        doc.text(s.val, sx + 8, 650);
+        doc.setFontSize(8.5);
+        doc.setTextColor(5, 150, 105);
+        doc.text(s.val, sx + 8, 644);
 
         doc.setFont('helvetica', 'normal');
         doc.setFontSize(7.5);
-        doc.setTextColor(203, 213, 225);
-        doc.text(s.note, sx + 8, 672, { maxWidth: 102 });
+        doc.setTextColor(51, 65, 85);
+        doc.text(s.note, sx + 8, 666, { maxWidth: 102 });
 
         sx += 128;
       });
@@ -2302,70 +2327,74 @@
       doc.addPage();
       renderHeader(4, "SECTION 4: CALIBRE ARCHITECTURE & 5-YEAR MAINTENANCE SCHEDULE");
 
-      doc.setTextColor(255, 255, 255);
-      doc.setFontSize(12);
+      doc.setTextColor(15, 23, 42);
+      doc.setFontSize(11);
       doc.setFont('helvetica', 'bold');
       doc.text("CHRONIC CALIBRE VULNERABILITIES & ESTIMATED REPAIR COSTS", 40, 115);
 
-      let py4 = 145;
+      let py4 = 140;
       model.chronic_faults.forEach((fault, i) => {
-        doc.setFillColor(16, 22, 34);
-        doc.roundedRect(40, py4 - 10, 532, 55, 6, 6, 'F');
-        doc.setTextColor(245, 158, 11);
-        doc.setFontSize(10);
+        doc.setFillColor(248, 250, 252);
+        doc.setDrawColor(226, 232, 240);
+        doc.roundedRect(40, py4 - 10, 532, 55, 6, 6, 'FD');
+        doc.setTextColor(180, 83, 9);
+        doc.setFontSize(9.5);
         doc.setFont('helvetica', 'bold');
         doc.text((i + 1) + ". " + fault.issue + " (Estimated Repair Cost: $" + fault.cost + ")", 55, py4 + 8);
-        doc.setTextColor(203, 213, 225);
-        doc.setFontSize(9);
+        doc.setTextColor(51, 65, 85);
+        doc.setFontSize(8.5);
         doc.setFont('helvetica', 'normal');
         doc.text(fault.detail, 55, py4 + 24, { maxWidth: 500 });
         py4 += 65;
       });
 
       // Timing Machine Tolerances
-      doc.setFillColor(12, 18, 29);
-      doc.roundedRect(40, 370, 532, 160, 8, 8, 'F');
-      doc.setTextColor(16, 185, 129);
-      doc.setFontSize(11);
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(226, 232, 240);
+      doc.roundedRect(40, 365, 532, 160, 8, 8, 'FD');
+      doc.setTextColor(5, 150, 105);
+      doc.setFontSize(10.5);
       doc.setFont('helvetica', 'bold');
-      doc.text("OFFICIAL TIMEGRAPH TESTING TOLERANCES", 60, 395);
+      doc.text("OFFICIAL TIMEGRAPH TESTING TOLERANCES", 60, 390);
 
-      doc.setTextColor(203, 213, 225);
-      doc.setFontSize(9);
+      doc.setTextColor(51, 65, 85);
+      doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
-      doc.text("• Balance Amplitude (Dial Up): Must read between 270° and 310° at full wind.", 60, 420);
-      doc.text("• Beat Error: Must not exceed 0.3 milliseconds across all 5 testing positions.", 60, 440);
-      doc.text("• Daily Rate: Superlative Chronometer standard is -2/+2 seconds per 24 hours.", 60, 460);
-      doc.text("• Lift Angle Configuration: 52 degrees for Cal. 3135; 53 degrees for Cal. 3235.", 60, 480);
+      doc.text("• Balance Amplitude (Dial Up): Must read between 270° and 310° at full wind.", 60, 415);
+      doc.text("• Beat Error: Must not exceed 0.3 milliseconds across all 5 testing positions.", 60, 435);
+      doc.text("• Daily Rate: Superlative Chronometer standard is -2/+2 seconds per 24 hours.", 60, 455);
+      doc.text("• Lift Angle Configuration: 52 degrees for Cal. 3135; 53 degrees for Cal. 3235.", 60, 475);
       renderFooter(4);
 
       // ── PAGE 5: DEALER COUNTER-OFFER SCRIPTS & ESCROW PROTOCOL ──
       doc.addPage();
       renderHeader(5, "SECTION 5: VERBATIM DEALER COUNTER-OFFER SCRIPTS & ESCROW PROTOCOL");
 
-      doc.setFillColor(12, 18, 29);
-      doc.roundedRect(40, 115, 532, 140, 8, 8, 'F');
-      doc.setTextColor(245, 158, 11);
-      doc.setFontSize(11);
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(226, 232, 240);
+      doc.roundedRect(40, 115, 532, 140, 8, 8, 'FD');
+      doc.setTextColor(180, 83, 9);
+      doc.setFontSize(10.5);
       doc.setFont('helvetica', 'bold');
       doc.text("VERBATIM COUNTER-OFFER SCRIPT FOR DEALER NEGOTIATIONS", 60, 140);
 
-      doc.setTextColor(203, 213, 225);
-      doc.setFontSize(9);
+      doc.setTextColor(51, 65, 85);
+      doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
       const fullScript = `"Thank you for providing the listing details on the ${model.name} (${model.reference}). After analyzing recent verified Chrono24 transaction comps and applying necessary deductions for softened lug chamfers, unverified service history, and missing documentation, my firm target purchase price is $${target.replace('$', '')}. I have immediate funds ready for wire transfer through an escrow service upon mutual agreement."`;
       doc.text(fullScript, 60, 165, { maxWidth: 490 });
 
       // Escrow Safety Checklist
-      doc.setFillColor(16, 22, 34);
-      doc.roundedRect(40, 275, 532, 230, 8, 8, 'F');
-      doc.setTextColor(255, 255, 255);
-      doc.setFontSize(11);
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(226, 232, 240);
+      doc.roundedRect(40, 275, 532, 230, 8, 8, 'FD');
+      doc.setTextColor(15, 23, 42);
+      doc.setFontSize(10.5);
       doc.setFont('helvetica', 'bold');
       doc.text("PRE-WIRE TRANSFER ESCROW SAFETY PROTOCOL", 60, 300);
 
-      doc.setTextColor(203, 213, 225);
-      doc.setFontSize(9);
+      doc.setTextColor(51, 65, 85);
+      doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
       doc.text("1. Always mandate an independent escrow service (e.g. Chrono24 Buyer Protection, Escrow.com).", 60, 325);
       doc.text("2. Never wire funds directly to private personal bank accounts without a verified corporate invoice.", 60, 345);
@@ -2377,14 +2406,15 @@
       // ── PAGE 6: BEZEL CERAMIC ENGINEERING & INSERT FORENSICS ──
       doc.addPage();
       renderHeader(6, "SECTION 6: CERACHROM BEZEL FORENSICS & PLATINUM PVD AUDIT");
-      doc.setFillColor(16, 22, 34);
-      doc.roundedRect(40, 115, 532, 220, 8, 8, 'F');
-      doc.setTextColor(245, 158, 11);
-      doc.setFontSize(11);
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(226, 232, 240);
+      doc.roundedRect(40, 115, 532, 220, 8, 8, 'FD');
+      doc.setTextColor(180, 83, 9);
+      doc.setFontSize(10.5);
       doc.setFont('helvetica', 'bold');
       doc.text("CERACHROM CERAMIC MOLECULAR MATRIX INSPECTION", 60, 140);
-      doc.setTextColor(203, 213, 225);
-      doc.setFontSize(9);
+      doc.setTextColor(51, 65, 85);
+      doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
       doc.text("1. Sintered Zirconium Dioxide (ZrO2): Hardness 1,500 Vickers. Replicas use low-grade porcelain.", 60, 165);
       doc.text("2. Platinum PVD Numeral Sputtering: Genuine Pt950 deposit provides warm silvery reflection.", 60, 185);
@@ -2396,14 +2426,15 @@
       // ── PAGE 7: CLASP CODES, END-LINKS & SERIAL FORENSICS ──
       doc.addPage();
       renderHeader(7, "SECTION 7: CLASP CODES, SOLID END-LINKS & LASER REHAUT");
-      doc.setFillColor(16, 22, 34);
-      doc.roundedRect(40, 115, 532, 220, 8, 8, 'F');
-      doc.setTextColor(245, 158, 11);
-      doc.setFontSize(11);
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(226, 232, 240);
+      doc.roundedRect(40, 115, 532, 220, 8, 8, 'FD');
+      doc.setTextColor(180, 83, 9);
+      doc.setFontSize(10.5);
       doc.setFont('helvetica', 'bold');
       doc.text("REHAUT ALIGNMENT & BRACELET FITMENT TOLERANCES", 60, 140);
-      doc.setTextColor(203, 213, 225);
-      doc.setFontSize(9);
+      doc.setTextColor(51, 65, 85);
+      doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
       doc.text("1. Rehaut Coronet @ 12: Micro-laser etched coronet must bisect the 12 o'clock minute index with zero offset.", 60, 165);
       doc.text("2. Letter 'X' Alignment (1-5 o'clock): The letter X in 'ROLEX' must align directly above each hour marker.", 60, 185);
@@ -2415,14 +2446,15 @@
       // ── PAGE 8: NFC SMART GUARANTEE CARD & UV WATERMARKS ──
       doc.addPage();
       renderHeader(8, "SECTION 8: NFC SMART GUARANTEE CARD & DOCUMENT FORENSICS");
-      doc.setFillColor(16, 22, 34);
-      doc.roundedRect(40, 115, 532, 220, 8, 8, 'F');
-      doc.setTextColor(245, 158, 11);
-      doc.setFontSize(11);
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(226, 232, 240);
+      doc.roundedRect(40, 115, 532, 220, 8, 8, 'FD');
+      doc.setTextColor(180, 83, 9);
+      doc.setFontSize(10.5);
       doc.setFont('helvetica', 'bold');
       doc.text("GENERATION 3 NFC CARD ENCRYPTION & UV SECURITY AUDIT", 60, 140);
-      doc.setTextColor(203, 213, 225);
-      doc.setFontSize(9);
+      doc.setTextColor(51, 65, 85);
+      doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
       doc.text("1. Embedded High-Frequency NFC Tag: Smartphone tap must open official rolex.com domain.", 60, 165);
       doc.text("2. 365nm UV Light Reaction: Blacklight exposure reveals glowing micro-fibers and security patterns.", 60, 185);
@@ -2434,14 +2466,15 @@
       // ── PAGE 9: GLOBAL STOLEN ASSET & TITLE CLEARANCE AUDIT ──
       doc.addPage();
       renderHeader(9, "SECTION 9: STOLEN ASSET REGISTRIES & LEGAL TITLE PROTOCOL");
-      doc.setFillColor(16, 22, 34);
-      doc.roundedRect(40, 115, 532, 220, 8, 8, 'F');
-      doc.setTextColor(245, 158, 11);
-      doc.setFontSize(11);
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(226, 232, 240);
+      doc.roundedRect(40, 115, 532, 220, 8, 8, 'FD');
+      doc.setTextColor(180, 83, 9);
+      doc.setFontSize(10.5);
       doc.setFont('helvetica', 'bold');
       doc.text("CROSS-DATABASE POLICE & INSURANCE RECORDS CHECK", 60, 140);
-      doc.setTextColor(203, 213, 225);
-      doc.setFontSize(9);
+      doc.setTextColor(51, 65, 85);
+      doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
       doc.text("1. The Watch Register (London): Cross-referenced across 350,000+ loss and theft reports (Clean Status).", 60, 165);
       doc.text("2. Enquirus (Richemont Global Police Database): Zero active dispute flags found.", 60, 185);
@@ -2453,14 +2486,15 @@
       // ── PAGE 10: 10-POINT ESCROW PROTOCOL & FINAL CERTIFICATION ──
       doc.addPage();
       renderHeader(10, "SECTION 10: 10-POINT ESCROW CHECKLIST & AUDIT CERTIFICATION");
-      doc.setFillColor(16, 22, 34);
-      doc.roundedRect(40, 115, 532, 220, 8, 8, 'F');
-      doc.setTextColor(245, 158, 11);
-      doc.setFontSize(11);
+      doc.setFillColor(248, 250, 252);
+      doc.setDrawColor(226, 232, 240);
+      doc.roundedRect(40, 115, 532, 220, 8, 8, 'FD');
+      doc.setTextColor(180, 83, 9);
+      doc.setFontSize(10.5);
       doc.setFont('helvetica', 'bold');
       doc.text("10-POINT RISK-FREE WIRE TRANSFER ESCROW PROTOCOL", 60, 140);
-      doc.setTextColor(203, 213, 225);
-      doc.setFontSize(9);
+      doc.setTextColor(51, 65, 85);
+      doc.setFontSize(8.5);
       doc.setFont('helvetica', 'normal');
       doc.text("1. Always mandate third-party escrow (Chrono24 Escrow or Escrow.com); reject direct wire demands.", 60, 165);
       doc.text("2. Require unbroken unboxing video showing tamper-evident security tape intact prior to box opening.", 60, 185);
