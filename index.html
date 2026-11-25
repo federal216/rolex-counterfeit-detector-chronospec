@@ -546,18 +546,34 @@
           </div>
         </div>
 
-        <!-- VERBATIM DEALER COUNTER-OFFER SCRIPT -->
-        <div class="p-5 rounded-xl bg-black/60 border border-zinc-800 space-y-2">
+        <!-- VERBATIM DEALER COUNTER-OFFER SCRIPT (VIP GATED) -->
+        <div class="p-5 rounded-xl bg-black/80 border border-amber-500/40 space-y-3 relative overflow-hidden">
           <div class="flex items-center justify-between text-xs font-mono font-bold">
             <span class="text-amber-400 uppercase flex items-center gap-1.5">
               <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
-              Verbatim Dealer Counter-Offer Script (Copy &amp; Paste to Seller):
+              Verbatim Dealer Hardball Counter-Offer Script:
             </span>
-            <button onclick="copyCounterScript()" class="text-zinc-400 hover:text-white cursor-pointer transition">📋 Copy</button>
+            <span class="text-[10px] font-mono bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded border border-amber-500/40 uppercase">VIP Access</span>
           </div>
-          <p id="counterScriptText" class="text-xs font-mono text-zinc-300 leading-relaxed italic bg-zinc-950 p-3 rounded-lg border border-zinc-800 select-all">
-            "Thank you for sharing the listing details. After cross-referencing recent verified Chrono24 and WatchCharts comps for this reference and factoring the softened case chamfers requiring recutting plus upcoming 5-year overhaul tolerances, my maximum firm wire transfer offer is $11,350. Ready to wire funds upon invoice."
-          </p>
+          
+          <div class="relative">
+            <p id="counterScriptText" class="text-xs font-mono text-zinc-300 leading-relaxed italic bg-zinc-950 p-4 rounded-xl border border-zinc-800 select-all">
+              "Thank you for sharing the listing details. After cross-referencing recent verified Chrono24 and WatchCharts comps for this reference and factoring the Calibre 3235 second-wheel amplitude collapse telemetry plus softened lug chamfers requiring recutting, my maximum firm wire transfer offer is <strong class='text-amber-400'>[TARGET PRICE]</strong>. Ready to wire funds upon invoice with 10-point escrow verification."
+            </p>
+            
+            <!-- Paywall Overlay banner for scripts & PDF -->
+            <div id="chronoScriptLockOverlay" class="mt-3 p-4 rounded-xl bg-gradient-to-r from-amber-950/80 via-black to-amber-950/80 border border-amber-500/50 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+              <div>
+                <div class="text-xs font-mono font-bold text-amber-300 flex items-center justify-center sm:justify-start gap-1.5">
+                  <span>🔒 OFFICIAL 10-PAGE FORENSIC DOSSIER &amp; ESCROW PROTOCOL</span>
+                </div>
+                <div class="text-[11px] text-zinc-400 font-mono mt-0.5">Includes full Clean/VSF replica clasp blacklist, micro-tell photos &amp; stamped appraisal certificate.</div>
+              </div>
+              <button onclick="openCheckoutModal()" class="px-6 py-2.5 rounded-xl gold-gradient text-black font-black text-xs uppercase tracking-wider hover:brightness-110 transition shadow-lg shadow-amber-500/20 whitespace-nowrap">
+                Unlock Dossier ($89) &rarr;
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- UNLOCK BUTTON & SAMPLE PDF BUTTON -->
@@ -931,6 +947,7 @@
 
   <!-- SCRIPT DATABASE & APP LOGIC -->
   <script>
+    let chronoPaymentVerified = false;
     const WATCH_DB = {
   "models": {
     "rolex_sub_126610ln": {
@@ -1927,6 +1944,7 @@
         alert('Please enter a valid Transaction Hash (TxID).');
         return;
       }
+      chronoPaymentVerified = true;
       alert('⏳ Verifying blockchain transfer... Access granted!');
       document.getElementById('downloadPdfSection').classList.remove('hidden');
       generateChronoDossierPDF();
@@ -1936,6 +1954,12 @@
     // 10-PAGE HOROLOGICAL FORENSIC PDF GENERATOR
     // ==========================================
     function generateChronoDossierPDF() {
+      // === STRICT PAYMENT GATE: Only allow PDF after verified checkout ===
+      if (!chronoPaymentVerified) {
+        openCheckoutModal();
+        alert('🔒 Official Forensic Dossier Locked: Please complete checkout ($89) via Card or Crypto to download your full 10-page signed appraisal PDF.');
+        return;
+      }
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF({ unit: 'pt', format: 'letter' });
       const select = document.getElementById('watchSelect');
@@ -2040,6 +2064,32 @@
         doc.setFont('helvetica', 'normal');
         dy += 26;
       }
+            // ── EMBED UPLOADED WATCH PHOTO (IF AVAILABLE) ──
+      if (typeof uploadedWatchPhotoDataUrl !== 'undefined' && uploadedWatchPhotoDataUrl) {
+        try {
+          doc.setFillColor(16, 22, 34);
+          doc.roundedRect(380, 110, 192, 120, 6, 6, 'F');
+          doc.addImage(uploadedWatchPhotoDataUrl, 'JPEG', 386, 115, 180, 110);
+          doc.setDrawColor(212, 175, 55);
+          doc.setLineWidth(1.5);
+          doc.roundedRect(386, 115, 180, 110, 4, 4, 'D');
+          doc.setFontSize(7);
+          doc.setTextColor(212, 175, 55);
+          doc.text("AI FORENSIC IMAGE CAPTURE", 396, 218);
+        } catch(e) { console.warn("Watch image embed note:", e); }
+      }
+
+      // ── OFFICIAL GOLD FORENSIC SEAL STAMP ──
+      doc.setDrawColor(212, 175, 55);
+      doc.setLineWidth(2);
+      doc.circle(520, 705, 30, 'D');
+      doc.circle(520, 705, 26, 'D');
+      doc.setFontSize(6.5);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(212, 175, 55);
+      doc.text("SWISS HOROLOGY", 492, 702);
+      doc.text("CERTIFIED AUDIT", 493, 712);
+
       renderFooter(1);
 
       // ── PAGE 2: MACRO DIAL & TYPOGRAPHY FORENSICS ──
@@ -2307,6 +2357,7 @@
     (function() {
       const p = new URLSearchParams(window.location.search);
       if (p.get('paid') === 'true' || p.get('status') === 'success' || p.get('unlocked') === 'true' || p.get('dodo_paid') === 'true' || p.get('whop_paid') === 'true') {
+        chronoPaymentVerified = true;
         alert('🎉 Payment Confirmed! Unlocking your 10-Page ChronoSpec VIP Dossier...');
         setTimeout(() => {
           openCheckoutModal();
