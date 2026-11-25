@@ -210,6 +210,8 @@
     .gold-gradient { background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 50%, #d97706 100%); }
     .gold-glow { box-shadow: 0 0 35px rgba(245, 158, 11, 0.25); }
     .badge-gradient { background: linear-gradient(135deg, #f59e0b, #eab308, #10b981); }
+    .scan-laser { animation: scanLaserAnim 2s ease-in-out infinite alternate; }
+    @keyframes scanLaserAnim { 0% { top: 0%; opacity: 0.3; } 50% { opacity: 1; } 100% { top: 96%; opacity: 0.3; } }
   </style>
 </head>
 <body class="min-h-screen bg-chrono-bg text-slate-200 antialiased selection:bg-amber-500/30 selection:text-amber-200">
@@ -349,6 +351,60 @@
           <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i>
           <span>Load Chrono24 Sample Listing</span>
         </button>
+      </div>
+
+            <!-- 📸 AI PHOTO FORENSICS / SCANNER (DRAG & DROP / CAMERA) -->
+      <div class="mb-8 p-6 rounded-2xl bg-zinc-950/90 border-2 border-dashed border-amber-500/50 hover:border-amber-400 transition-all text-center relative overflow-hidden group shadow-2xl">
+        <input type="file" id="watchPhotoInput" accept="image/*" class="hidden" onchange="handleWatchPhotoUpload(event)">
+        
+        <div id="watchScanPrompt" onclick="document.getElementById('watchPhotoInput').click()" class="cursor-pointer space-y-3">
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(245,158,11,0.2)]">
+            📸
+          </div>
+          <div>
+            <div class="text-sm sm:text-base font-bold text-white font-mono flex items-center justify-center gap-2">
+              <span>Drop Watch, Dial, Clasp or Movement Photo</span>
+              <span class="text-[10px] bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded border border-amber-500/40 uppercase">AI Computer Vision</span>
+            </div>
+            <p class="text-xs text-zinc-400 mt-1 max-w-lg mx-auto leading-relaxed">Snap or upload any listing photo, wrist shot, or caseback. Our AI automatically decodes reference numbers, inspects micro-coronet alignment, and runs the audit instantly.</p>
+          </div>
+          <div class="pt-1">
+            <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl gold-gradient text-black font-extrabold text-xs uppercase tracking-wider shadow hover:brightness-110 transition">
+              <span>Select or Snap Watch Photo</span>
+              <span>⚡</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Scanning State Animation -->
+        <div id="watchScanningState" class="hidden py-8 space-y-4">
+          <div class="relative w-36 h-36 mx-auto rounded-2xl overflow-hidden border-2 border-amber-500 shadow-2xl bg-black">
+            <img id="watchPreviewImg" src="" alt="Watch scan" class="w-full h-full object-cover">
+            <div class="absolute inset-x-0 h-1.5 bg-amber-400 shadow-[0_0_15px_#f59e0b] scan-laser"></div>
+          </div>
+          <div>
+            <div class="text-xs font-mono font-bold text-amber-400 animate-pulse" id="watchScanStatus">AI Computer Vision analyzing Rehaut engraving &amp; laser alignment...</div>
+            <p class="text-[11px] text-zinc-500 mt-1 font-mono">Cross-referencing 28 luxury references &amp; microscopic factory tolerances</p>
+          </div>
+        </div>
+
+        <!-- Analysis Match Banner -->
+        <div id="watchScanMatchBanner" class="hidden mt-4 p-4 rounded-xl bg-amber-500/10 border border-amber-500/40 flex flex-col sm:flex-row items-center justify-between text-left gap-3">
+          <div class="flex items-center space-x-3.5">
+            <div class="w-14 h-14 rounded-xl overflow-hidden border-2 border-amber-400 flex-shrink-0 shadow-md">
+              <img id="watchMatchedThumb" src="" alt="Matched watch" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <div class="text-xs font-mono text-emerald-400 font-bold flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>AI REFERENCE DETECTED &amp; FORENSIC SCAN COMPLETE</span>
+              </div>
+              <div class="text-sm sm:text-base font-bold text-white font-mono mt-0.5" id="watchMatchedName">Rolex Submariner Date 41mm (126610LN)</div>
+              <div class="text-[11px] text-zinc-400 font-mono mt-0.5">Rehaut Alignment: <span class="text-emerald-400 font-bold">99.4% Match</span> · Dial Serifs: <span class="text-emerald-400 font-bold">Authentic Profile</span> · SEL Recess: <span class="text-emerald-400 font-bold">0.24mm Nominal</span></div>
+            </div>
+          </div>
+          <button onclick="document.getElementById('watchPhotoInput').click()" class="text-xs font-mono text-amber-400 underline hover:text-white transition whitespace-nowrap">Rescan Photo</button>
+        </div>
       </div>
 
       <!-- FORM GRID -->
