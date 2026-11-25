@@ -468,32 +468,55 @@
         </div>
       </div>
 
-      <!-- Tab Switcher (Card / Whop vs Crypto) -->
+      <!-- Tab Switcher (Dodo vs Whop vs Crypto) -->
       <div class="flex gap-2 bg-black/40 p-1 rounded-xl border border-white/5">
-        <button id="modalTabCardBtn" onclick="switchModalTab('card')" class="flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center justify-center gap-2 cursor-pointer">
-          <span>💳</span><span>Card / Apple Pay (Whop)</span>
+        <button id="modalTabDodoBtn" onclick="switchModalTab('dodo')" class="flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center justify-center gap-1.5 cursor-pointer">
+          <span>💳</span><span>Card / Apple Pay (Dodo)</span>
         </button>
-        <button id="modalTabCryptoBtn" onclick="switchModalTab('crypto')" class="flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-2 cursor-pointer">
-          <span>🪙</span><span>Crypto (USDT / USDC)</span>
+        <button id="modalTabWhopBtn" onclick="switchModalTab('whop')" class="flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer">
+          <span>⚡</span><span>Whop</span>
+        </button>
+        <button id="modalTabCryptoBtn" onclick="switchModalTab('crypto')" class="flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer">
+          <span>🪙</span><span>Crypto</span>
         </button>
       </div>
 
-      <!-- TAB 1: WHOP CARD CHECKOUT -->
-      <div id="modalTabCardView" class="space-y-4">
+      <!-- TAB 1: DODO PAYMENTS -->
+      <div id="modalTabDodoView" class="space-y-4">
         <div class="p-4 rounded-2xl bg-zinc-950/80 border border-zinc-800 space-y-3">
           <div class="flex items-center justify-between">
             <span class="text-xs font-mono font-bold text-zinc-300">Total Due Today:</span>
             <span class="text-xl font-black text-white font-mono">$89.00 USD</span>
           </div>
           <p class="text-xs text-zinc-400 leading-relaxed">
-            Securely processed via <strong>Whop Merchant of Record</strong>. Supports Apple Pay, Google Pay, and international debit/credit cards with 256-bit encryption.
+            Securely processed via <strong>Dodo Payments Merchant of Record</strong>. Supports Apple Pay, Google Pay, and international cards with 256-bit encryption.
           </p>
           <div class="flex items-center gap-2 text-[11px] font-mono text-emerald-400">
             <span>✓</span><span>Instant Digital Fulfillment &amp; 14-Day Money-Back Guarantee</span>
           </div>
         </div>
 
-        <a id="whopCheckoutLink" href="https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-xl gold-gradient text-black font-black text-sm tracking-wide uppercase hover:brightness-110 flex items-center justify-center gap-2 transition shadow-xl shadow-amber-500/20">
+        <button id="chronoDodoPayBtn" onclick="startChronoDodoCheckout()" class="w-full py-4 rounded-xl gold-gradient text-black font-black text-sm tracking-wide uppercase hover:brightness-110 flex items-center justify-center gap-2 transition shadow-xl shadow-amber-500/20 cursor-pointer">
+          <span>Proceed with Dodo Payments ($89.00) &rarr;</span>
+        </button>
+      </div>
+
+      <!-- TAB 2: WHOP CARD CHECKOUT -->
+      <div id="modalTabWhopView" class="space-y-4 hidden">
+        <div class="p-4 rounded-2xl bg-zinc-950/80 border border-zinc-800 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-zinc-300">Total Due Today:</span>
+            <span class="text-xl font-black text-white font-mono">$89.00 USD</span>
+          </div>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Securely processed via <strong>Whop Merchant of Record</strong>. Supports Apple Pay, Google Pay, and global credit/debit cards.
+          </p>
+          <div class="flex items-center gap-2 text-[11px] font-mono text-emerald-400">
+            <span>✓</span><span>Instant Digital Fulfillment</span>
+          </div>
+        </div>
+
+        <a id="whopCheckoutLink" href="https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-xl bg-orange-500 hover:bg-orange-400 text-black font-black text-sm tracking-wide uppercase flex items-center justify-center gap-2 transition shadow-xl shadow-orange-500/20">
           <span>Proceed to Whop Checkout ($89.00) &rarr;</span>
         </a>
       </div>
@@ -1470,21 +1493,65 @@
       document.getElementById('checkoutModal').classList.add('hidden');
     }
     function switchModalTab(tab) {
-      const cardView = document.getElementById('modalTabCardView');
+      const dodoView = document.getElementById('modalTabDodoView');
+      const whopView = document.getElementById('modalTabWhopView');
       const cryptoView = document.getElementById('modalTabCryptoView');
-      const cardBtn = document.getElementById('modalTabCardBtn');
+      const dodoBtn = document.getElementById('modalTabDodoBtn');
+      const whopBtn = document.getElementById('modalTabWhopBtn');
       const cryptoBtn = document.getElementById('modalTabCryptoBtn');
-      if (tab === 'card') {
-        cardView.classList.remove('hidden');
-        cryptoView.classList.add('hidden');
-        cardBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center justify-center gap-2 cursor-pointer';
-        cryptoBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-2 cursor-pointer';
+
+      if (tab === 'dodo') {
+        if (dodoView) dodoView.classList.remove('hidden');
+        if (whopView) whopView.classList.add('hidden');
+        if (cryptoView) cryptoView.classList.add('hidden');
+        if (dodoBtn) dodoBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center justify-center gap-1.5 cursor-pointer';
+        if (whopBtn) whopBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer';
+        if (cryptoBtn) cryptoBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer';
+      } else if (tab === 'whop') {
+        if (dodoView) dodoView.classList.add('hidden');
+        if (whopView) whopView.classList.remove('hidden');
+        if (cryptoView) cryptoView.classList.add('hidden');
+        if (whopBtn) whopBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-orange-500/20 text-orange-300 border border-orange-500/40 flex items-center justify-center gap-1.5 cursor-pointer';
+        if (dodoBtn) dodoBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer';
+        if (cryptoBtn) cryptoBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer';
       } else {
-        cardView.classList.add('hidden');
-        cryptoView.classList.remove('hidden');
-        cryptoBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center justify-center gap-2 cursor-pointer';
-        cardBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-2 cursor-pointer';
+        if (dodoView) dodoView.classList.add('hidden');
+        if (whopView) whopView.classList.add('hidden');
+        if (cryptoView) cryptoView.classList.remove('hidden');
+        if (cryptoBtn) cryptoBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 flex items-center justify-center gap-1.5 cursor-pointer';
+        if (dodoBtn) dodoBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer';
+        if (whopBtn) whopBtn.className = 'flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-zinc-900 text-zinc-400 hover:text-white border border-transparent flex items-center justify-center gap-1.5 cursor-pointer';
       }
+    }
+
+    async function startChronoDodoCheckout() {
+      const btn = document.getElementById('chronoDodoPayBtn');
+      const originalText = btn ? btn.innerHTML : '';
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = 'Connecting to Dodo Payments...';
+      }
+      try {
+        const res = await fetch('/api/dodo/initialize', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: 'collector@chronospec.ai', buyerName: 'ChronoSpec VIP' })
+        });
+        const data = await res.json();
+        if (data && data.checkoutUrl) {
+          window.location.href = data.checkoutUrl;
+          return;
+        }
+      } catch (e) {
+        console.warn('Dodo API error, redirecting to Whop fallback:', e);
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = originalText;
+        }
+      }
+      // Fallback
+      window.location.href = 'https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier';
     }
     function switchChronoCryptoCoin(coin) {
       const usdtV = document.getElementById('chronoUsdtView');
@@ -1893,7 +1960,7 @@
     // Check payment parameters in URL
     (function() {
       const p = new URLSearchParams(window.location.search);
-      if (p.get('paid') === 'true' || p.get('status') === 'success' || p.get('unlocked') === 'true') {
+      if (p.get('paid') === 'true' || p.get('status') === 'success' || p.get('unlocked') === 'true' || p.get('dodo_paid') === 'true' || p.get('whop_paid') === 'true') {
         alert('🎉 Payment Confirmed! Unlocking your 10-Page ChronoSpec VIP Dossier...');
         setTimeout(() => {
           openCheckoutModal();
