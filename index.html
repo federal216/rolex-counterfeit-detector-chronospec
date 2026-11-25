@@ -1531,7 +1531,7 @@
         btn.disabled = true;
         btn.innerHTML = `<span class="flex items-center justify-center gap-2"><span>Connecting to Dodo Payments...</span></span>`;
       }
-      const directDodoUrl = 'https://test.dodopayments.com/buy/pdt_0Nsi1qHuRLnD6c4NmHyfK';
+      const directDodoUrl = 'https://test.checkout.dodopayments.com/buy/pdt_0Nsi1qHuRLnD6c4NmHyfK';
 
       try {
         const res = await fetch('/api/dodo/initialize', {
