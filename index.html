@@ -1908,7 +1908,10 @@
     let chronoActiveCryptoCoin = 'usdt';
 
     function getChronoApiUrl(path) {
-      const custom = (localStorage.getItem(CHRONO_API_BASE_KEY) || window.FEDERAL216_API_BASE || '').trim().replace(/\/+$/, '');
+      const host = window.location.hostname;
+      const isDirectBackend = host === 'localhost' || host === '127.0.0.1' || host.endsWith('.vercel.app');
+      const fallbackBase = isDirectBackend ? '' : 'https://chronospec-ai.vercel.app';
+      const custom = (localStorage.getItem(CHRONO_API_BASE_KEY) || window.FEDERAL216_API_BASE || fallbackBase).trim().replace(/\/+$/, '');
       return custom ? `${custom}${path}` : path;
     }
 
