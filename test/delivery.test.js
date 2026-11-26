@@ -348,6 +348,49 @@ describe(`${DEFAULT_KEY} PDF email delivery & verification`, () => {
     assert.deepEqual(sentEmails.map(e => e.to).sort(), ['karakoc.i@gmail.com', 'whop.buyer@example.com']);
   });
 
+  test('POST /api/webhooks/whop verifies Whop v1 Standard Webhooks ws_ secret and extracts customer_email/total/variant_id', async () => {
+    const secret = 'ws_test_standard_webhooks_secret_123';
+    process.env.WHOP_WEBHOOK_SECRET = secret;
+
+    const payload = JSON.stringify({
+      type: 'payment.succeeded',
+      api_version: 'v1',
+      data: {
+        id: 'pay_whop_v1_888',
+        customer_email: 'whop.v1.buyer@example.com',
+        currency: 'usd',
+        variant_id: 'plan_ikEY1bP1Pk7di',
+        total: { amount: '99.00', currency: 'usd' },
+        line_items: [{ product_title: 'CabinetScan AI VIP Clinical Dossier', product_id: 'prod_cabinet' }],
+        user: { id: 'user_123', name: 'Whop V1 Buyer' }
+      }
+    });
+
+    const whId = 'msg_whop_v1_123';
+    const whTs = String(Math.floor(Date.now() / 1000));
+    const stdSig = crypto
+      .createHmac('sha256', Buffer.from(secret, 'utf8'))
+      .update(`${whId}.${whTs}.${payload}`)
+      .digest('base64');
+
+    const badRes = await httpRequest(server, 'POST', '/api/webhooks/whop', payload, {
+      'webhook-id': whId,
+      'webhook-timestamp': whTs,
+      'webhook-signature': 'v1,bad_sig'
+    });
+    assert.equal(badRes.status, 401);
+
+    const okRes = await httpRequest(server, 'POST', '/api/webhooks/whop', payload, {
+      'webhook-id': whId,
+      'webhook-timestamp': whTs,
+      'webhook-signature': `v1,${stdSig}`
+    });
+    assert.equal(okRes.status, 200);
+    assert.equal(okRes.body.ok, true);
+    assert.equal(okRes.body.filename, PRODUCTS.cabinetscan.defaultFilename);
+    assert.deepEqual(sentEmails.map(e => e.to).sort(), ['karakoc.i@gmail.com', 'whop.v1.buyer@example.com']);
+  });
+
   test('HTML index.html inline scripts compile cleanly and contain delivery hooks', () => {
     const htmlPath = path.join(__dirname, '..', 'index.html');
     const html = fs.readFileSync(htmlPath, 'utf8');
