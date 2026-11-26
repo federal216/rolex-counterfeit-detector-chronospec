@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "sample_chronospec_dossier.pdf",
+          "lib/**"
+        ]
+      }
+    },
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.pdf",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "data/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/status",
+      "dest": "/api/status.js"
+    },
+    {
+      "src": "/api/dodo/initialize",
+      "dest": "/api/dodo/initialize.js"
+    },
+    {
+      "src": "/api/deliver-pdf",
+      "dest": "/api/deliver-pdf.js"
+    },
+    {
+      "src": "/api/webhooks/dodo",
+      "dest": "/api/webhooks/dodo.js"
+    },
+    {
+      "src": "/api/webhooks/whop",
+      "dest": "/api/webhooks/whop.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}

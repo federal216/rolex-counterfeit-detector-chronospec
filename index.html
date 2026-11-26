@@ -755,6 +755,21 @@
         </div>
       </div>
 
+      <!-- Required Customer Email for Guaranteed PDF Delivery -->
+      <div class="space-y-1.5">
+        <div class="flex items-center justify-between">
+          <label for="chronoCustEmail" class="text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-300">
+            Delivery &amp; Receipt Email <span class="text-rose-400">*</span>
+          </label>
+          <span class="text-[10px] font-mono text-amber-400">PDF Sent Automatically Here</span>
+        </div>
+        <input type="email" id="chronoCustEmail" oninput="clearChronoCheckoutError()" placeholder="collector@domain.com" class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400 font-mono transition">
+        <div id="chronoCheckoutError" class="hidden p-2.5 rounded-xl bg-rose-950/80 border border-rose-500/60 text-rose-300 text-[11px] font-mono flex items-center gap-2">
+          <span>⚠️</span>
+          <span id="chronoCheckoutErrorMsg">Please enter a valid email address.</span>
+        </div>
+      </div>
+
       <!-- Tab Switcher (Dodo vs Whop vs Crypto) -->
       <div class="flex gap-2 bg-black/40 p-1 rounded-xl border border-white/5">
         <button id="modalTabDodoBtn" onclick="switchModalTab('dodo')" class="flex-1 py-2.5 rounded-lg text-xs font-bold font-mono transition bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center justify-center gap-1.5 cursor-pointer">
@@ -828,9 +843,9 @@
           </div>
         </div>
 
-        <a id="whopCheckoutLink" href="https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-xl bg-orange-500 hover:bg-orange-400 text-black font-black text-sm tracking-wide uppercase flex items-center justify-center gap-2 transition shadow-xl shadow-orange-500/20">
+        <button id="whopCheckoutLink" type="button" onclick="startChronoWhopCheckout()" class="w-full py-4 rounded-xl bg-orange-500 hover:bg-orange-400 text-black font-black text-sm tracking-wide uppercase flex items-center justify-center gap-2 transition shadow-xl shadow-orange-500/20 cursor-pointer">
           <span>Proceed to Whop Checkout ($89.00) &rarr;</span>
-        </a>
+        </button>
       </div>
 
       <!-- TAB 2: CRYPTO CHECKOUT -->
@@ -889,22 +904,24 @@
           </button>
         </div>
 
-        <!-- TxID & Contact Input -->
+        <!-- TxID & Email Delivery Status -->
         <div class="space-y-2">
-          <input type="text" id="chronoTxid" placeholder="Paste 64-char TxID (Transaction Hash) *" class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400 font-mono">
-          <input type="text" id="chronoContactNote" placeholder="Telegram @handle or Email (Backup / Receipt - Optional)" class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400 font-mono">
-          <button type="button" onclick="submitChronoCrypto()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-500 hover:from-amber-400 hover:to-emerald-400 text-black font-extrabold text-xs transition cursor-pointer">
-            ⚡ Verify Transfer &amp; Download 10-Page Dossier
+          <input type="text" id="chronoTxid" placeholder="Paste 64-char TxID (0x... or Tron hash) *" class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400 font-mono">
+          <p class="text-[10px] font-mono text-zinc-400">PDF will be verified on-chain and emailed automatically to your email above &amp; karakoc.i@gmail.com.</p>
+          <button id="chronoCryptoSubmitBtn" type="button" onclick="submitChronoCrypto()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-500 hover:from-amber-400 hover:to-emerald-400 text-black font-extrabold text-xs transition cursor-pointer">
+            ⚡ Verify Transfer &amp; Email 10-Page Dossier
           </button>
+          <p id="chronoCryptoStatusMsg" class="text-[11px] text-center font-mono text-zinc-400 hidden"></p>
         </div>
       </div>
 
       <!-- PDF Download Button (Hidden until paid) -->
-      <div id="downloadPdfSection" class="hidden text-center pt-2 border-t border-zinc-800">
-        <button onclick="generateChronoDossierPDF()" class="w-full py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-black text-sm transition flex items-center justify-center gap-2">
+      <div id="downloadPdfSection" class="hidden text-center pt-2 border-t border-zinc-800 space-y-2">
+        <button onclick="generateChronoDossierPDF()" class="w-full py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-black text-sm transition flex items-center justify-center gap-2 cursor-pointer">
           <i data-lucide="download" class="w-4 h-4"></i>
           <span>Download Official 10-Page ChronoSpec Dossier (PDF)</span>
         </button>
+        <p id="chronoEmailStatus" class="hidden text-[11px] font-mono text-emerald-300 bg-emerald-950/60 border border-emerald-500/40 rounded-xl p-2.5"></p>
       </div>
     </div>
   </div>
@@ -1886,9 +1903,154 @@
       document.getElementById('counterScriptText').innerText = script;
     }
 
+    const CHRONO_API_BASE_KEY = 'FEDERAL216_API_BASE';
+    const CHRONO_PENDING_ORDER_KEY = 'CHRONOSPEC_PENDING_ORDER';
+    let chronoActiveCryptoCoin = 'usdt';
+
+    function getChronoApiUrl(path) {
+      const custom = (localStorage.getItem(CHRONO_API_BASE_KEY) || window.FEDERAL216_API_BASE || '').trim().replace(/\/+$/, '');
+      return custom ? `${custom}${path}` : path;
+    }
+
+    function isValidChronoEmail(email) {
+      return /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]{2,}$/.test(String(email || '').trim());
+    }
+
+    function getChronoCustomerEmail() {
+      const el = document.getElementById('chronoCustEmail');
+      if (el && isValidChronoEmail(el.value)) return el.value.trim();
+      try {
+        const pending = JSON.parse(localStorage.getItem(CHRONO_PENDING_ORDER_KEY) || '{}');
+        if (isValidChronoEmail(pending.email)) return pending.email.trim();
+      } catch {}
+      const saved = localStorage.getItem('CHRONOSPEC_CUSTOMER_EMAIL');
+      return isValidChronoEmail(saved) ? saved.trim() : '';
+    }
+
+    function showChronoCheckoutError(msg) {
+      const box = document.getElementById('chronoCheckoutError');
+      const txt = document.getElementById('chronoCheckoutErrorMsg');
+      if (box && txt) {
+        txt.innerText = msg;
+        box.classList.remove('hidden');
+      }
+      const el = document.getElementById('chronoCustEmail');
+      if (el && msg.toLowerCase().includes('email')) {
+        el.classList.add('border-rose-500', 'ring-1', 'ring-rose-500');
+        el.focus();
+      }
+    }
+
+    function clearChronoCheckoutError() {
+      const box = document.getElementById('chronoCheckoutError');
+      if (box) box.classList.add('hidden');
+      const el = document.getElementById('chronoCustEmail');
+      if (el) el.classList.remove('border-rose-500', 'ring-1', 'ring-rose-500');
+    }
+
+    function requireChronoEmail() {
+      clearChronoCheckoutError();
+      const el = document.getElementById('chronoCustEmail');
+      const email = el ? el.value.trim() : '';
+      if (!isValidChronoEmail(email)) {
+        showChronoCheckoutError('Please enter a valid email address to receive your 10-page PDF dossier immediately upon purchase.');
+        return null;
+      }
+      localStorage.setItem('CHRONOSPEC_CUSTOMER_EMAIL', email);
+      return email;
+    }
+
+    function saveChronoPendingOrder(extra = {}) {
+      const email = getChronoCustomerEmail();
+      const select = document.getElementById('watchSelect');
+      const modelKey = select ? select.value : 'rolex_sub_126610ln';
+      const model = WATCH_DB.models[modelKey];
+      const record = {
+        productKey: 'chronospec',
+        email,
+        modelKey,
+        modelName: model ? `${model.name} (${model.reference})` : 'Rolex Appraisal',
+        timestamp: Date.now(),
+        ...extra
+      };
+      localStorage.setItem(CHRONO_PENDING_ORDER_KEY, JSON.stringify(record));
+      if (email) localStorage.setItem('CHRONOSPEC_CUSTOMER_EMAIL', email);
+    }
+
+    async function deliverChronoPdfByEmail({ paymentMethod, paymentId, sessionId, transactionId, network, customerEmail, statusTargetId }) {
+      const email = isValidChronoEmail(customerEmail) ? customerEmail.trim() : getChronoCustomerEmail();
+      const statusEl = document.getElementById(statusTargetId || 'chronoEmailStatus');
+      if (statusEl) {
+        statusEl.classList.remove('hidden');
+        statusEl.innerText = email
+          ? `📧 Sending 10-page Forensic PDF to ${email} & karakoc.i@gmail.com...`
+          : '📧 Verifying PDF delivery with server...';
+      }
+
+      let pdfBase64 = null;
+      let filename = 'ChronoSpec_10Page_Forensic_Dossier.pdf';
+      try {
+        const built = generateChronoDossierPDF({ returnBase64Only: true });
+        if (built && built.pdfBase64) {
+          pdfBase64 = built.pdfBase64;
+          filename = built.filename || filename;
+        }
+      } catch (e) {
+        console.warn('Could not build browser jsPDF for email attachment, falling back to official PDF:', e);
+      }
+
+      const select = document.getElementById('watchSelect');
+      const model = select ? WATCH_DB.models[select.value] : null;
+      const targetDisplay = document.getElementById('resTargetDisplay')?.innerText || '';
+      const summaryText = model ? `Watch: ${model.name} (${model.reference}) | Target Counter-Offer: ${targetDisplay}` : '';
+
+      try {
+        const res = await fetch(getChronoApiUrl('/api/deliver-pdf'), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            productKey: 'chronospec',
+            customerEmail: email,
+            buyerName: 'ChronoSpec VIP Client',
+            paymentMethod,
+            paymentId,
+            sessionId,
+            transactionId,
+            network,
+            pdfBase64,
+            filename,
+            summaryText
+          })
+        });
+        const data = await res.json();
+        if (res.ok && data.ok) {
+          if (statusEl) {
+            statusEl.innerText = `✅ 10-Page PDF Dossier emailed to ${data.customerEmail} and karakoc.i@gmail.com!`;
+            statusEl.className = 'text-[11px] font-mono text-emerald-300 bg-emerald-950/60 border border-emerald-500/40 rounded-xl p-2.5';
+          }
+          return data;
+        }
+        if (statusEl) {
+          statusEl.innerText = `⚠️ Delivery note: ${data.error || 'Pending gateway webhook/server config.'}`;
+          statusEl.className = 'text-[11px] font-mono text-amber-300 bg-amber-950/50 border border-amber-500/40 rounded-xl p-2.5';
+        }
+      } catch (err) {
+        console.warn('ChronoSpec delivery API unreachable from static host:', err);
+        if (statusEl) {
+          statusEl.innerText = 'ℹ️ PDF downloaded locally. Server-side email delivery requires Vercel/Node backend & Dodo/Whop webhooks.';
+          statusEl.className = 'text-[11px] font-mono text-amber-300 bg-amber-950/50 border border-amber-500/40 rounded-xl p-2.5';
+        }
+      }
+      return null;
+    }
+
     // MODAL HANDLERS
     function openCheckoutModal() {
       document.getElementById('checkoutModal').classList.remove('hidden');
+      const emailEl = document.getElementById('chronoCustEmail');
+      const saved = getChronoCustomerEmail();
+      if (emailEl && saved && !emailEl.value) emailEl.value = saved;
+      clearChronoCheckoutError();
     }
     function closeCheckoutModal() {
       document.getElementById('checkoutModal').classList.add('hidden');
@@ -1935,22 +2097,28 @@
     }
 
     async function startChronoDodoCheckout() {
+      const email = requireChronoEmail();
+      if (!email) return;
+
       const btn = document.getElementById('chronoDodoPayBtn');
       const originalText = btn ? btn.innerHTML : '';
       if (btn) {
         btn.disabled = true;
         btn.innerHTML = `<span class="flex items-center justify-center gap-2"><span>Connecting to Dodo Payments...</span></span>`;
       }
-      const directDodoUrl = 'https://test.checkout.dodopayments.com/buy/pdt_0Nsi1qHuRLnD6c4NmHyfK';
+      saveChronoPendingOrder({ paymentMethod: 'dodo' });
+      const returnUrl = `${window.location.origin}${window.location.pathname}?status=success&paid=true&dodo_paid=true`;
+      const directDodoUrl = `https://test.checkout.dodopayments.com/buy/pdt_0Nsi1qHuRLnD6c4NmHyfK?email=${encodeURIComponent(email)}`;
 
       try {
-        const res = await fetch('/api/dodo/initialize', {
+        const res = await fetch(getChronoApiUrl('/api/dodo/initialize'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: 'collector@chronospec.ai', buyerName: 'ChronoSpec VIP' })
+          body: JSON.stringify({ email, buyerName: 'ChronoSpec VIP', returnUrl })
         });
         const data = await res.json();
         if (data && data.checkoutUrl) {
+          saveChronoPendingOrder({ paymentMethod: 'dodo', sessionId: data.sessionId });
           window.location.href = data.checkoutUrl;
           return;
         }
@@ -1965,7 +2133,17 @@
       // Direct checkout URL fallback for static GitHub Pages host
       window.location.href = directDodoUrl;
     }
+
+    function startChronoWhopCheckout() {
+      const email = requireChronoEmail();
+      if (!email) return;
+      saveChronoPendingOrder({ paymentMethod: 'whop' });
+      const whopUrl = `https://whop.com/cabinetscan-ai/chronospec-ai-vip-watch-appraisal-dossier?email=${encodeURIComponent(email)}`;
+      window.open(whopUrl, '_blank') || (window.location.href = whopUrl);
+    }
+
     function switchChronoCryptoCoin(coin) {
+      chronoActiveCryptoCoin = coin;
       const usdtV = document.getElementById('chronoUsdtView');
       const usdcV = document.getElementById('chronoUsdcView');
       const usdtB = document.getElementById('chronoUsdtBtn');
@@ -1989,27 +2167,106 @@
       const t = document.getElementById('counterScriptText').innerText;
       navigator.clipboard.writeText(t).then(() => alert('Counter-offer script copied!'));
     }
-    function submitChronoCrypto() {
+
+    async function verifyChronoBlockchainTx(txid, coin) {
+      const clean = String(txid || '').trim();
+      const USDT_WALLET = 'TUzD8hJcCsdjPZaS1man4vLAufiqzYpKWi';
+      const USDC_WALLET = '0x45824b71c98b4922723be312fa6fc8af6be0e090';
+      const USDT_CONTRACT = 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t';
+      const USDC_CONTRACT = '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48';
+
+      if (coin === 'usdt' && !clean.startsWith('0x')) {
+        const accRes = await fetch(`https://api.trongrid.io/v1/accounts/${USDT_WALLET}/transactions/trc20?limit=40&contract_address=${USDT_CONTRACT}&only_to=true&order_by=block_timestamp,desc`);
+        const accJson = await accRes.json();
+        const found = (accJson.data || []).find(t => String(t.transaction_id || '').toLowerCase() === clean.toLowerCase());
+        if (found && parseInt(found.value, 10) / 1e6 >= 88.5) {
+          return { verified: true, network: 'usdt', txHash: found.transaction_id };
+        }
+        const evRes = await fetch(`https://api.trongrid.io/v1/transactions/${encodeURIComponent(clean)}/events`);
+        const evJson = await evRes.json();
+        const ev = (evJson.data || []).find(e =>
+          String(e.contract_address || '').toLowerCase() === USDT_CONTRACT.toLowerCase() &&
+          e.event_name === 'Transfer' &&
+          String(e.result?.to || '').toLowerCase() === USDT_WALLET.toLowerCase() &&
+          parseInt(e.result?.value || '0', 10) / 1e6 >= 88.5
+        );
+        if (ev) return { verified: true, network: 'usdt', txHash: clean };
+        return { verified: false, reason: 'USDT (TRC20) transfer of $89.00 not found on TronGrid yet.' };
+      }
+
+      const ethRes = await fetch(`https://eth.blockscout.com/api/v2/transactions/${encodeURIComponent(clean)}/token-transfers`);
+      const ethJson = await ethRes.json();
+      const item = (ethJson.items || []).find(i =>
+        String(i.token?.address_hash || '').toLowerCase() === USDC_CONTRACT.toLowerCase() &&
+        String(i.to?.hash || '').toLowerCase() === USDC_WALLET.toLowerCase() &&
+        i.total && (parseFloat(i.total.value) / Math.pow(10, parseInt(i.total.decimals || '6', 10))) >= 88.5
+      );
+      if (item) return { verified: true, network: 'usdc', txHash: clean };
+      return { verified: false, reason: 'USDC (ERC20) transfer of $89.00 not found on Blockscout yet.' };
+    }
+
+    async function submitChronoCrypto() {
+      const email = requireChronoEmail();
+      if (!email) return;
+
       const tx = document.getElementById('chronoTxid').value.trim();
-      if (!tx || tx.length < 8) {
-        alert('Please enter a valid Transaction Hash (TxID).');
+      const statusMsg = document.getElementById('chronoCryptoStatusMsg');
+      if (!/^(0x)?[a-fA-F0-9]{16,128}$/.test(tx)) {
+        if (statusMsg) {
+          statusMsg.innerText = '⚠️ Please enter a valid 64-character Transaction Hash (TxID).';
+          statusMsg.className = 'text-[11px] text-center font-mono text-rose-400';
+          statusMsg.classList.remove('hidden');
+        }
         return;
       }
-      chronoPaymentVerified = true;
-      alert('⏳ Verifying blockchain transfer... Access granted!');
-      document.getElementById('downloadPdfSection').classList.remove('hidden');
-      generateChronoDossierPDF();
+
+      if (statusMsg) {
+        statusMsg.innerText = '⏳ Verifying blockchain transfer on TronGrid / Blockscout...';
+        statusMsg.className = 'text-[11px] text-center font-mono text-amber-300 animate-pulse';
+        statusMsg.classList.remove('hidden');
+      }
+
+      try {
+        const check = await verifyChronoBlockchainTx(tx, chronoActiveCryptoCoin);
+        if (!check.verified) {
+          if (statusMsg) {
+            statusMsg.innerText = `❌ ${check.reason}`;
+            statusMsg.className = 'text-[11px] text-center font-mono text-rose-400';
+          }
+          return;
+        }
+        chronoPaymentVerified = true;
+        saveChronoPendingOrder({ paymentMethod: 'crypto', transactionId: check.txHash, network: check.network });
+        document.getElementById('downloadPdfSection').classList.remove('hidden');
+        if (statusMsg) {
+          statusMsg.innerText = '✅ Payment verified! Downloading PDF & sending to your email + karakoc.i@gmail.com...';
+          statusMsg.className = 'text-[11px] text-center font-mono text-emerald-400';
+        }
+        generateChronoDossierPDF();
+        await deliverChronoPdfByEmail({
+          paymentMethod: 'crypto',
+          transactionId: check.txHash,
+          network: check.network,
+          customerEmail: email,
+          statusTargetId: 'chronoEmailStatus'
+        });
+      } catch (err) {
+        if (statusMsg) {
+          statusMsg.innerText = `⚠️ Blockchain check error: ${err.message}`;
+          statusMsg.className = 'text-[11px] text-center font-mono text-rose-400';
+        }
+      }
     }
 
     // ==========================================
     // 10-PAGE HOROLOGICAL FORENSIC PDF GENERATOR
     // ==========================================
-    function generateChronoDossierPDF() {
+    function generateChronoDossierPDF(options = {}) {
       // === STRICT PAYMENT GATE: Only allow PDF after verified checkout ===
       if (!chronoPaymentVerified) {
         openCheckoutModal();
         alert('🔒 Official Forensic Dossier Locked: Please complete checkout ($89) via Card or Crypto to download your full 10-page signed appraisal PDF.');
-        return;
+        return null;
       }
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF({ unit: 'pt', format: 'letter' });
@@ -2627,20 +2884,52 @@
 
       renderFooter(10);
 
-      // Save PDF
-      doc.save("ChronoSpec_10Page_Forensic_Dossier_" + model.reference + ".pdf");
+      // Save or return PDF base64
+      const pdfFilename = "ChronoSpec_10Page_Forensic_Dossier_" + model.reference + ".pdf";
+      if (options && options.returnBase64Only) {
+        return {
+          filename: pdfFilename,
+          pdfBase64: doc.output('datauristring')
+        };
+      }
+      doc.save(pdfFilename);
     }
 
     // Check payment parameters in URL
     (function() {
       const p = new URLSearchParams(window.location.search);
-      if (p.get('paid') === 'true' || p.get('status') === 'success' || p.get('unlocked') === 'true' || p.get('dodo_paid') === 'true' || p.get('whop_paid') === 'true') {
+      if (p.get('paid') === 'true' || p.get('status') === 'success' || p.get('unlocked') === 'true' || p.get('dodo_paid') === 'true' || p.get('whop_paid') === 'true' || p.get('payment_id')) {
         chronoPaymentVerified = true;
-        alert('🎉 Payment Confirmed! Unlocking your 10-Page ChronoSpec VIP Dossier...');
         setTimeout(() => {
           openCheckoutModal();
           document.getElementById('downloadPdfSection').classList.remove('hidden');
           generateChronoDossierPDF();
+          if (!sessionStorage.getItem('CHRONOSPEC_RETURN_DELIVERED')) {
+            sessionStorage.setItem('CHRONOSPEC_RETURN_DELIVERED', 'true');
+            let pending = {};
+            try { pending = JSON.parse(localStorage.getItem(CHRONO_PENDING_ORDER_KEY) || '{}'); } catch {}
+            const paymentId = p.get('payment_id') || p.get('paymentId') || '';
+            const sessionId = p.get('session_id') || pending.sessionId || '';
+            const method = p.get('whop_paid') === 'true' ? 'whop' : (pending.paymentMethod || 'dodo');
+            if (paymentId || sessionId) {
+              deliverChronoPdfByEmail({
+                paymentMethod: method,
+                paymentId,
+                sessionId,
+                customerEmail: pending.email || getChronoCustomerEmail(),
+                statusTargetId: 'chronoEmailStatus'
+              });
+            } else {
+              const st = document.getElementById('chronoEmailStatus');
+              const savedEmail = getChronoCustomerEmail();
+              if (st) {
+                st.classList.remove('hidden');
+                st.innerText = savedEmail
+                  ? `📧 Official PDF Dossier is dispatched automatically to ${savedEmail} and karakoc.i@gmail.com.`
+                  : '📧 Official PDF Dossier is dispatched automatically to your checkout email and karakoc.i@gmail.com.';
+              }
+            }
+          }
         }, 800);
       }
     })();
